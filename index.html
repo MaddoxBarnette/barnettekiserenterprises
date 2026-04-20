@@ -16,34 +16,38 @@
       color: #e6e6e6;
     }
 
-    header {
+    /* HEADER */
+    .header {
       background: #0f0f0f;
-      padding: 30px;
-      text-align: center;
+      padding: 20px 40px;
       border-bottom: 3px solid #2e7d32;
+    }
 
+    .header-left {
       display: flex;
-      flex-direction: column;
       align-items: center;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 34px;
-      letter-spacing: 1px;
-    }
-
-    header p {
-      margin-top: 10px;
-      color: #bdbdbd;
+      justify-content: center;
+      gap: 15px;
+      text-align: left;
     }
 
     .logo {
-      width: 120px;
+      width: 70px;
       height: auto;
-      margin-bottom: 10px;
     }
 
+    .header-text h1 {
+      margin: 0;
+      font-size: 30px;
+      letter-spacing: 1px;
+    }
+
+    .header-text p {
+      margin: 5px 0 0 0;
+      color: #bdbdbd;
+    }
+
+    /* HERO */
     .hero {
       padding: 70px 20px;
       text-align: center;
@@ -77,6 +81,7 @@
       background: #1b5e20;
     }
 
+    /* SECTIONS */
     .section {
       padding: 55px 20px;
       text-align: center;
@@ -119,15 +124,31 @@
     a {
       color: #2e7d32;
     }
+
+    /* MOBILE */
+    @media (max-width: 600px) {
+      .header-left {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .header-text h1 {
+        font-size: 24px;
+      }
+    }
   </style>
 </head>
 
 <body>
 
-<header>
-  <img src="BKENTERPRISESLOGO.png" alt="BK Enterprises Logo" class="logo">
-  <h1>Barnette & Kiser Enterprises</h1>
-  <p>Heavy Equipment • Trucks • Residential Cleaning</p>
+<header class="header">
+  <div class="header-left">
+    <img src="BKENTERPRISESLOGO.png" alt="BK Enterprises Logo" class="logo">
+    <div class="header-text">
+      <h1>Barnette & Kiser Enterprises</h1>
+      <p>Heavy Equipment • Trucks • Residential Cleaning</p>
+    </div>
+  </div>
 </header>
 
 <section class="hero">
