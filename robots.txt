@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://barnettekiserenterprises.com/sitemap.xml
