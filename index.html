@@ -21,27 +21,34 @@
       background: #0f0f0f;
       padding: 20px 40px;
       border-bottom: 3px solid #2e7d32;
-    }
 
-    .header-left {
       display: flex;
       align-items: center;
-      justify-content: center;
-      gap: 15px;
+      justify-content: space-between;
+      position: relative;
     }
 
+    /* LEFT LOGO */
     .header-logo {
-      width: 65px;
+      width: 60px;
       height: auto;
     }
 
-    .header-text h1 {
+    /* CENTER TEXT BLOCK */
+    .header-center {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+    }
+
+    .header-center h1 {
       margin: 0;
       font-size: 30px;
       letter-spacing: 1px;
     }
 
-    .header-text p {
+    .header-center p {
       margin: 5px 0 0 0;
       color: #bdbdbd;
     }
@@ -56,12 +63,12 @@
       url('https://images.unsplash.com/photo-1581092160607-ee22731c2f91') center/cover no-repeat;
     }
 
-    /* WATERMARK LOGO IN HERO */
+    /* WATERMARK LOGO (increased opacity) */
     .hero::before {
       content: "";
       background: url('BKENTERPRISESLOGO.png') no-repeat center;
       background-size: 520px;
-      opacity: 0.08;
+      opacity: 0.18; /* increased from 0.08 */
       position: absolute;
       top: 0;
       left: 0;
@@ -147,21 +154,22 @@
 
     /* MOBILE */
     @media (max-width: 600px) {
+      .header {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .header-center {
+        position: static;
+        transform: none;
+      }
+
       .hero h2 {
         font-size: 32px;
       }
 
-      .header-text h1 {
-        font-size: 24px;
-      }
-
       .hero::before {
         background-size: 300px;
-      }
-
-      .header-left {
-        flex-direction: column;
-        text-align: center;
       }
     }
   </style>
@@ -169,14 +177,13 @@
 
 <body>
 
-<!-- HEADER WITH LOGO (TOP LEFT BRAND AREA) -->
+<!-- HEADER -->
 <header class="header">
-  <div class="header-left">
-    <img src="BKENTERPRISESLOGO.png" alt="BK Enterprises Logo" class="header-logo">
-    <div class="header-text">
-      <h1>Barnette & Kiser Enterprises</h1>
-      <p>Heavy Equipment • Trucks • Residential Cleaning</p>
-    </div>
+  <img src="BKENTERPRISESLOGO.png" alt="BK Enterprises Logo" class="header-logo">
+
+  <div class="header-center">
+    <h1>Barnette & Kiser Enterprises</h1>
+    <p>Heavy Equipment • Trucks • Residential Cleaning</p>
   </div>
 </header>
 
