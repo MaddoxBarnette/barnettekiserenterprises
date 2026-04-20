@@ -5,10 +5,10 @@
   <title>Barnette & Kiser Enterprises</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Barnette & Kiser Enterprises — Southwest Virginia's heavy equipment and pressure washing specialists. Steam cleaning for skidders, big rigs, fleet trucks, and residential properties. Serving Russell, Wise, and Washington County. Call 276-285-4605.">
-<link rel="icon" href="favicon.png?v=1">
-<link rel="shortcut icon" href="favicon.png?v=1">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
-<link rel="icon" type="image/png" sizes="16x16" href="favicon.png">
+  <link rel="icon" href="favicon.png?v=1">
+  <link rel="shortcut icon" href="favicon.png?v=1">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon.png">
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Barlow:wght@400;500&display=swap" rel="stylesheet">
 
   <style>
@@ -25,6 +25,9 @@
       --text: #e8e8e8;
       --muted: #888;
     }
+
+    /* smooth scroll */
+    html { scroll-behavior: smooth; }
 
     body {
       margin: 0;
@@ -52,6 +55,8 @@
       display: flex;
       align-items: center;
       gap: 14px;
+      text-decoration: none;
+      color: inherit;
     }
 
     .header-logo {
@@ -60,9 +65,7 @@
       object-fit: contain;
     }
 
-    .brand-text {
-      font-family: 'Oswald', sans-serif;
-    }
+    .brand-text { font-family: 'Oswald', sans-serif; }
 
     .brand-text .name {
       font-size: 20px;
@@ -84,6 +87,7 @@
     .header-cta {
       display: flex;
       gap: 10px;
+      align-items: center;
     }
 
     .btn {
@@ -99,12 +103,14 @@
       display: inline-flex;
       align-items: center;
       gap: 7px;
+      cursor: pointer;
+      border: 2px solid transparent;
     }
 
     .btn-primary {
       background: var(--green);
       color: #fff;
-      border: 2px solid var(--green);
+      border-color: var(--green);
     }
 
     .btn-primary:hover {
@@ -116,7 +122,7 @@
     .btn-outline {
       background: transparent;
       color: var(--text);
-      border: 2px solid #444;
+      border-color: #444;
     }
 
     .btn-outline:hover {
@@ -127,7 +133,7 @@
     /* ── HERO ─────────────────────────────── */
     .hero {
       position: relative;
-      min-height: 78vh; /* slightly reduced from 88vh */
+      min-height: 78vh;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -153,7 +159,7 @@
     .hero::before {
       content: "";
       background: url('BKENTERPRISESLOGO.png') no-repeat center;
-      background-size: 420px; /* slightly smaller watermark */
+      background-size: 420px;
       opacity: 0.12;
       position: absolute;
       inset: 0;
@@ -163,13 +169,13 @@
     .hero-content {
       position: relative;
       z-index: 1;
-      max-width: 720px; /* tightened from 820px */
+      max-width: 720px;
       padding: 0 24px;
     }
 
     .hero-eyebrow {
       font-family: 'Oswald', sans-serif;
-      font-size: 17px; /* up from 15px */
+      font-size: 17px;
       letter-spacing: 3px;
       text-transform: uppercase;
       color: var(--green-bright);
@@ -179,7 +185,7 @@
 
     .hero h1 {
       font-family: 'Oswald', sans-serif;
-      font-size: clamp(34px, 6vw, 62px); /* reduced from clamp(40px, 7vw, 72px) */
+      font-size: clamp(34px, 6vw, 62px);
       font-weight: 700;
       line-height: 1.0;
       text-transform: uppercase;
@@ -187,14 +193,12 @@
       letter-spacing: 2px;
     }
 
-    .hero h1 span {
-      color: var(--green-bright);
-    }
+    .hero h1 span { color: var(--green-bright); }
 
     .hero-sub {
-      font-size: 16px; /* down from 17px */
+      font-size: 16px;
       color: #b0b0b0;
-      max-width: 500px; /* tightened from 560px */
+      max-width: 500px;
       margin: 0 auto 30px;
       line-height: 1.6;
       font-weight: 400;
@@ -208,8 +212,8 @@
     }
 
     .hero-buttons .btn {
-      font-size: 14px; /* down from 15px */
-      padding: 12px 28px; /* slightly smaller from 14px 32px */
+      font-size: 14px;
+      padding: 12px 28px;
     }
 
     /* ── STATS BAR ────────────────────────── */
@@ -231,7 +235,6 @@
     }
 
     .stat-item:last-child { border-right: none; }
-
     .stat-icon { font-size: 20px; }
 
     .stat-text {
@@ -252,7 +255,7 @@
 
     .section-label {
       font-family: 'Oswald', sans-serif;
-      font-size: 18px; /* up from 15px */
+      font-size: 18px;
       letter-spacing: 3px;
       text-transform: uppercase;
       color: var(--green-bright);
@@ -262,26 +265,23 @@
 
     .section h2 {
       font-family: 'Oswald', sans-serif;
-      font-size: clamp(30px, 4.5vw, 42px); /* up from clamp(26px, 4vw, 38px) */
+      font-size: clamp(30px, 4.5vw, 42px);
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 2px;
-      margin: 0 0 12px;
+      margin: 0 0 0;
+      display: inline-block;
+      border-bottom: 3px solid var(--green);
+      padding-bottom: 6px;
+      margin-bottom: 40px;
     }
 
-    .section-rule {
-      width: 80px;
-      height: 3px;
-      background: var(--green);
-      margin: 0 auto 40px;
-      border: none;
-    }
+    .section-rule { display: none; }
 
     /* ── SERVICES ─────────────────────────── */
     .services-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      grid-template-rows: auto auto;
       gap: 16px;
       max-width: 900px;
       margin: 0 auto;
@@ -312,9 +312,7 @@
       background: #1e1e1e;
     }
 
-    .card.featured {
-      border-top-width: 4px;
-    }
+    .card.featured { border-top-width: 4px; }
 
     .card-icon {
       font-size: 38px;
@@ -361,11 +359,7 @@
       opacity: 1;
     }
 
-    .card-residential .card-icon {
-      margin-bottom: 0;
-      font-size: 32px;
-    }
-
+    .card-residential .card-icon { margin-bottom: 0; font-size: 32px; }
     .card-residential h3 { font-size: 18px; margin-bottom: 4px; }
     .card-residential p { margin-bottom: 0; font-size: 14px; }
 
@@ -378,12 +372,35 @@
 
     .area-inner {
       padding: 80px 24px;
-      max-width: 1000px;
+      max-width: 1100px;
       margin: 0 auto;
       text-align: center;
     }
 
-    /* area section uses same .section-label and .section h2 styles via inline classes */
+    .area-inner h2 {
+      font-family: 'Oswald', sans-serif;
+      font-size: clamp(30px, 4.5vw, 42px);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin: 0 0 0;
+      display: inline-block;
+      border-bottom: 3px solid var(--green);
+      padding-bottom: 6px;
+      margin-bottom: 40px;
+    }
+
+    .area-inner hr.section-rule { display: none; }
+
+    .area-inner .section-label {
+      font-family: 'Oswald', sans-serif;
+      font-size: 18px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--green-bright);
+      margin-bottom: 10px;
+      font-weight: 500;
+    }
 
     .county-tags {
       display: flex;
@@ -415,9 +432,7 @@
     }
 
     /* ── CONTACT ──────────────────────────── */
-    .contact-section {
-      background: #0d0d0d;
-    }
+    .contact-section { background: #0d0d0d; }
 
     .contact-inner {
       max-width: 900px;
@@ -430,21 +445,30 @@
       text-align: left;
     }
 
+    .contact-eyebrow {
+      font-family: 'Oswald', sans-serif;
+      font-size: 18px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--green-bright);
+      margin-bottom: 10px;
+      font-weight: 500;
+    }
+
     .contact-info h2 {
       font-family: 'Oswald', sans-serif;
-      font-size: 32px;
+      font-size: clamp(30px, 4.5vw, 42px);
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 2px;
-      margin: 0 0 8px;
-    }
-
-    .contact-info .green-line {
-      width: 48px;
-      height: 3px;
-      background: var(--green);
+      margin: 0 0 0;
+      display: inline-block;
+      border-bottom: 3px solid var(--green);
+      padding-bottom: 6px;
       margin-bottom: 28px;
     }
+
+    .contact-info .green-line { display: none; }
 
     .contact-row {
       display: flex;
@@ -534,11 +558,19 @@
       color: var(--muted);
     }
 
+    footer .footer-copy a {
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    footer .footer-copy a:hover { color: var(--green-bright); }
+
     /* ── MOBILE ───────────────────────────── */
     @media (max-width: 680px) {
       .header { padding: 0 16px; height: auto; min-height: 64px; flex-wrap: wrap; gap: 8px; padding-top: 10px; padding-bottom: 10px; }
       .header-cta .btn-outline { display: none; }
-      .header-cta a[href="work.html"] { display: inline-flex; }
+      .header-cta a[href="work.html"] { display: inline-flex; font-size: 13px; padding: 9px 14px; }
       .header-cta .btn-primary { font-size: 13px; padding: 9px 16px; }
       .brand-text .name { font-size: 17px; }
 
@@ -555,8 +587,11 @@
       .stat-item:last-child { border-bottom: none; }
 
       .section { padding: 56px 16px; }
-      .section-label { font-size: 15px; } /* slightly smaller on mobile */
+      .section-label { font-size: 15px; }
       .section h2 { font-size: clamp(26px, 7vw, 36px); }
+
+      .area-inner { padding: 56px 16px; }
+      .area-inner h2 { font-size: clamp(26px, 7vw, 36px); }
 
       .services-grid { grid-template-columns: 1fr; }
       .card-residential { grid-template-columns: 1fr; }
@@ -581,13 +616,13 @@
 
 <!-- HEADER -->
 <header class="header">
-  <div class="header-brand">
+  <a href="index.html" class="header-brand">
     <img src="BKENTERPRISESLOGO.png" class="header-logo" alt="BK Logo">
     <div class="brand-text">
       <div class="name">Barnette & Kiser</div>
       <div class="tagline">Steam &amp; Pressure Cleaning</div>
     </div>
-  </div>
+  </a>
   <div class="header-cta">
     <a href="work.html" class="btn btn-outline">Our Work</a>
     <a href="tel:2762854605" class="btn btn-outline">📞 276-285-4605</a>
@@ -691,6 +726,7 @@
   <div class="contact-inner">
 
     <div class="contact-info">
+      <p class="contact-eyebrow">Reach Out</p>
       <h2>Get In Touch</h2>
       <div class="green-line"></div>
       <div class="contact-row">
@@ -729,7 +765,7 @@
 <!-- FOOTER -->
 <footer>
   <span class="footer-brand">Barnette &amp; Kiser Enterprises</span>
-  <span class="footer-copy">Serving Southwest Virginia &mdash; Reliable &bull; Hardworking &bull; Local &bull; <a href="privacy.html" style="color:#666; text-decoration:none;">Privacy Policy</a></span>
+  <span class="footer-copy">&copy; 2025 &mdash; Serving Southwest Virginia &mdash; Reliable &bull; Hardworking &bull; Local &bull; <a href="privacy.html">Privacy Policy</a></span>
 </footer>
 
 </body>
