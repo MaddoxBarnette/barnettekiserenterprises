@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Privacy Policy – Barnette & Kiser Enterprises</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Privacy Policy for Barnette & Kiser Enterprises.">
+  <link rel="icon" href="favicon.png?v=1">
+  <link rel="shortcut icon" href="favicon.png?v=1">
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Barlow:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+
+    :root {
+      --green: #2e7d32;
+      --green-bright: #43a047;
+      --green-dim: #1b5e20;
+      --bg: #111;
+      --surface: #1a1a1a;
+      --border: #2a2a2a;
+      --text: #e8e8e8;
+      --muted: #888;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Barlow', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    /* ── HEADER ───────────────────────────── */
+    .header {
+      background: #0a0a0a;
+      padding: 0 40px;
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 2px solid var(--green);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .header-logo { width: 48px; height: 48px; object-fit: contain; }
+
+    .brand-text { font-family: 'Oswald', sans-serif; }
+
+    .brand-text .name {
+      font-size: 20px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+
+    .brand-text .tagline {
+      font-size: 11px;
+      color: var(--green-bright);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-weight: 400;
+      margin-top: 3px;
+    }
+
+    .btn {
+      font-family: 'Oswald', sans-serif;
+      font-weight: 600;
+      font-size: 14px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 10px 22px;
+      text-decoration: none;
+      border-radius: 2px;
+      transition: all 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .btn-primary {
+      background: var(--green);
+      color: #fff;
+      border: 2px solid var(--green);
+    }
+
+    .btn-primary:hover {
+      background: var(--green-bright);
+      border-color: var(--green-bright);
+    }
+
+    /* ── CONTENT ──────────────────────────── */
+    .content {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 64px 24px 80px;
+    }
+
+    .content .eyebrow {
+      font-family: 'Oswald', sans-serif;
+      font-size: 13px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--green-bright);
+      margin-bottom: 10px;
+      font-weight: 500;
+    }
+
+    .content h1 {
+      font-family: 'Oswald', sans-serif;
+      font-size: clamp(28px, 4vw, 42px);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin: 0 0 6px;
+    }
+
+    .page-rule {
+      width: 56px;
+      height: 3px;
+      background: var(--green);
+      border: none;
+      margin: 16px 0 36px;
+    }
+
+    .last-updated {
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 40px;
+    }
+
+    .content h2 {
+      font-family: 'Oswald', sans-serif;
+      font-size: 20px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--green-bright);
+      margin: 36px 0 10px;
+    }
+
+    .content p {
+      font-size: 15px;
+      color: #bbb;
+      line-height: 1.75;
+      margin: 0 0 16px;
+    }
+
+    .content a {
+      color: var(--green-bright);
+      text-decoration: none;
+    }
+
+    .content a:hover { text-decoration: underline; }
+
+    /* ── FOOTER ───────────────────────────── */
+    footer {
+      background: #080808;
+      border-top: 2px solid var(--green-dim);
+      padding: 24px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    footer .footer-brand {
+      font-family: 'Oswald', sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+
+    footer .footer-copy {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    @media (max-width: 680px) {
+      .header { padding: 0 16px; height: auto; min-height: 64px; padding-top: 10px; padding-bottom: 10px; }
+      .brand-text .name { font-size: 17px; }
+      .btn { font-size: 13px; padding: 9px 16px; }
+      .content { padding: 48px 16px 60px; }
+      footer { flex-direction: column; text-align: center; padding: 20px 16px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <a href="index.html" class="header-brand">
+    <img src="BKENTERPRISESLOGO.png" class="header-logo" alt="BK Logo">
+    <div class="brand-text">
+      <div class="name">Barnette & Kiser</div>
+      <div class="tagline">Steam &amp; Pressure Cleaning</div>
+    </div>
+  </a>
+  <a href="mailto:barnetteandkiserenterprises@gmail.com?subject=Request%20for%20Quote" class="btn btn-primary">Get a Quote</a>
+</header>
+
+<!-- CONTENT -->
+<div class="content">
+  <p class="eyebrow">Legal</p>
+  <h1>Privacy Policy</h1>
+  <hr class="page-rule">
+  <p class="last-updated">Last updated: May 25, 2025</p>
+
+  <p>Barnette & Kiser Enterprises ("we," "us," or "our") operates the website barnettekiserenterprises.com. This page explains what information we collect, how we use it, and your rights regarding it.</p>
+
+  <h2>Information We Collect</h2>
+  <p>We do not collect personal information automatically when you visit our website. The only information we receive is what you voluntarily provide when you contact us — such as your name, phone number, email address, or details about your equipment or job when you reach out for a quote.</p>
+
+  <h2>How We Use Your Information</h2>
+  <p>Any information you send us is used solely to respond to your inquiry and provide you with a quote or schedule service. We do not sell, trade, or share your information with third parties.</p>
+
+  <h2>Email & Phone Contact</h2>
+  <p>When you email us at <a href="mailto:barnetteandkiserenterprises@gmail.com">barnetteandkiserenterprises@gmail.com</a> or call <a href="tel:2762854605">276-285-4605</a>, your contact details are used only to communicate with you about your service request.</p>
+
+  <h2>Third-Party Services</h2>
+  <p>Our website uses Google Fonts for typography and an embedded Google Map for our service area. These services are provided by Google and are subject to Google's own privacy policy at <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a>.</p>
+
+  <h2>Cookies</h2>
+  <p>Our website does not use tracking cookies or analytics software. We do not monitor visitor behavior or store any data on your device.</p>
+
+  <h2>Children's Privacy</h2>
+  <p>Our website is not directed at children under the age of 13 and we do not knowingly collect information from minors.</p>
+
+  <h2>Changes to This Policy</h2>
+  <p>We may update this privacy policy from time to time. Any changes will be reflected on this page with an updated date at the top.</p>
+
+  <h2>Contact Us</h2>
+  <p>If you have any questions about this privacy policy, you can reach us at <a href="mailto:barnetteandkiserenterprises@gmail.com">barnetteandkiserenterprises@gmail.com</a> or by calling <a href="tel:2762854605">276-285-4605</a>.</p>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <span class="footer-brand">Barnette &amp; Kiser Enterprises</span>
+  <span class="footer-copy">Serving Southwest Virginia &mdash; Reliable &bull; Hardworking &bull; Local</span>
+</footer>
+
+</body>
+</html>
