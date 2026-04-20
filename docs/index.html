@@ -30,7 +30,7 @@
       overflow-x: hidden;
     }
 
-    /* HEADER */
+    /* ── HEADER ───────────────────────────── */
     .header {
       background: #0a0a0a;
       padding: 0 40px;
@@ -120,7 +120,7 @@
       color: var(--green-bright);
     }
 
-    /* HERO */
+    /* ── HERO ─────────────────────────────── */
     .hero {
       position: relative;
       min-height: 88vh;
@@ -132,6 +132,7 @@
       background: #111;
     }
 
+    /* diagonal accent lines */
     .hero::after {
       content: "";
       position: absolute;
@@ -146,6 +147,7 @@
       pointer-events: none;
     }
 
+    /* watermark logo */
     .hero::before {
       content: "";
       background: url('BKENTERPRISESLOGO.png') no-repeat center;
@@ -193,6 +195,7 @@
       max-width: 560px;
       margin: 0 auto 36px;
       line-height: 1.6;
+      font-weight: 400;
     }
 
     .hero-buttons {
@@ -207,15 +210,37 @@
       padding: 14px 32px;
     }
 
-    /* NEW TRUST LINE */
-    .hero-trust {
-      font-size: 13px;
-      color: #777;
-      margin-top: 18px;
-      letter-spacing: 1px;
+    /* ── STATS BAR ────────────────────────── */
+    .stats-bar {
+      background: var(--green-dim);
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
     }
 
-    /* SECTIONS */
+    .stat-item {
+      padding: 16px 40px;
+      text-align: center;
+      border-right: 1px solid rgba(255,255,255,0.12);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .stat-item:last-child { border-right: none; }
+
+    .stat-icon { font-size: 20px; }
+
+    .stat-text {
+      font-family: 'Oswald', sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    /* ── SECTIONS ─────────────────────────── */
     .section {
       padding: 80px 24px;
       text-align: center;
@@ -249,21 +274,200 @@
       border: none;
     }
 
+    /* ── SERVICES ─────────────────────────── */
+    .services-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto auto;
+      gap: 16px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    /* heavy + trucks span full top row each at equal size,
+       residential is smaller at bottom center */
     .card {
       background: var(--surface);
       border: 1px solid var(--border);
       border-top: 3px solid var(--green);
       padding: 36px 30px;
       text-align: left;
-      transition: 0.2s;
+      transition: all 0.22s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      top: 0; right: 0;
+      width: 80px; height: 80px;
+      background: radial-gradient(circle at top right, rgba(46,125,50,0.12), transparent 70%);
     }
 
     .card:hover {
       transform: translateY(-4px);
       border-top-color: var(--green-bright);
+      background: #1e1e1e;
     }
 
-    /* CONTACT */
+    .card.featured {
+      border-top-width: 4px;
+    }
+
+    .card-icon {
+      font-size: 38px;
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    .card h3 {
+      font-family: 'Oswald', sans-serif;
+      font-size: 22px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin: 0 0 10px;
+    }
+
+    .card p {
+      font-size: 15px;
+      color: #aaa;
+      line-height: 1.65;
+      margin: 0 0 16px;
+    }
+
+    .card-detail {
+      font-size: 13px;
+      color: var(--green-bright);
+      font-family: 'Oswald', sans-serif;
+      letter-spacing: 0.5px;
+      font-weight: 500;
+    }
+
+    .card-residential {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 20px;
+      align-items: center;
+      border-top-color: #555;
+      opacity: 0.88;
+    }
+
+    .card-residential:hover {
+      border-top-color: var(--green);
+      opacity: 1;
+    }
+
+    .card-residential .card-icon {
+      margin-bottom: 0;
+      font-size: 32px;
+    }
+
+    .card-residential h3 { font-size: 18px; margin-bottom: 4px; }
+    .card-residential p { margin-bottom: 0; font-size: 14px; }
+
+    /* ── SERVICE AREA ─────────────────────── */
+    .area-section {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .area-inner {
+      padding: 80px 24px;
+      max-width: 1000px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .county-tags {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 32px;
+    }
+
+    .county-tag {
+      font-family: 'Oswald', sans-serif;
+      font-size: 13px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 8px 20px;
+      border: 1px solid var(--green);
+      color: var(--green-bright);
+      border-radius: 2px;
+    }
+
+    .map-box iframe {
+      width: 100%;
+      height: 360px;
+      border: 0;
+      border-radius: 2px;
+      filter: grayscale(80%) brightness(0.75);
+      margin-top: 8px;
+      display: block;
+    }
+
+    /* ── CONTACT ──────────────────────────── */
+    .contact-section {
+      background: #0d0d0d;
+    }
+
+    .contact-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 80px 24px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: start;
+      text-align: left;
+    }
+
+    .contact-info h2 {
+      font-family: 'Oswald', sans-serif;
+      font-size: 32px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin: 0 0 8px;
+    }
+
+    .contact-info .green-line {
+      width: 48px;
+      height: 3px;
+      background: var(--green);
+      margin-bottom: 28px;
+    }
+
+    .contact-row {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .contact-item label {
+      font-family: 'Oswald', sans-serif;
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--green-bright);
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .contact-item p, .contact-item a {
+      font-size: 16px;
+      color: var(--text);
+      margin: 0;
+      text-decoration: none;
+    }
+
+    .contact-item a:hover { color: var(--green-bright); }
+
     .contact-cta {
       background: var(--surface);
       border: 1px solid var(--border);
@@ -271,62 +475,230 @@
       padding: 36px;
     }
 
+    .contact-cta h3 {
+      font-family: 'Oswald', sans-serif;
+      font-size: 22px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin: 0 0 12px;
+    }
+
+    .contact-cta p {
+      font-size: 14px;
+      color: #aaa;
+      line-height: 1.6;
+      margin: 0 0 24px;
+    }
+
+    .contact-cta .btn {
+      width: 100%;
+      justify-content: center;
+      margin-bottom: 10px;
+    }
+
     .pricing-note {
       font-size: 12px;
       color: var(--muted);
       margin-top: 16px;
+      line-height: 1.5;
       border-top: 1px solid var(--border);
       padding-top: 16px;
     }
 
+    /* ── FOOTER ───────────────────────────── */
+    footer {
+      background: #080808;
+      border-top: 2px solid var(--green-dim);
+      padding: 24px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    footer .footer-brand {
+      font-family: 'Oswald', sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+
+    footer .footer-copy {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    /* ── MOBILE ───────────────────────────── */
+    @media (max-width: 680px) {
+      .header { padding: 0 20px; }
+      .header-cta .btn-outline { display: none; }
+
+      .services-grid { grid-template-columns: 1fr; }
+      .card-residential { grid-template-columns: 1fr; }
+
+      .contact-inner { grid-template-columns: 1fr; gap: 40px; }
+
+      .stat-item { padding: 14px 20px; }
+
+      footer { flex-direction: column; text-align: center; }
+    }
   </style>
 </head>
-
 <body>
 
+<!-- HEADER -->
 <header class="header">
   <div class="header-brand">
-    <img src="BKENTERPRISESLOGO.png" class="header-logo">
+    <img src="BKENTERPRISESLOGO.png" class="header-logo" alt="BK Logo">
     <div class="brand-text">
       <div class="name">Barnette & Kiser</div>
-      <div class="tagline">Steam & Pressure Cleaning</div>
+      <div class="tagline">Steam &amp; Pressure Cleaning</div>
     </div>
   </div>
-
   <div class="header-cta">
-    <a href="tel:2762854605" class="btn btn-outline">Call</a>
-    <a href="mailto:maddoxbarnette10@gmail.com" class="btn btn-primary">Quote</a>
+    <a href="tel:2762854605" class="btn btn-outline">📞 276-285-4605</a>
+    <a href="mailto:maddoxbarnette10@gmail.com?subject=Request%20for%20Quote" class="btn btn-primary">Get a Quote</a>
   </div>
 </header>
 
+<!-- HERO -->
 <section class="hero">
   <div class="hero-content">
-
-    <p class="hero-eyebrow">Southwest Virginia Specialists</p>
-
+    <p class="hero-eyebrow">Southwest Virginia's Equipment Cleaning Specialists</p>
     <h1>Built Tough.<br><span>Cleaned Right.</span></h1>
-
-    <p class="hero-sub">
-      High-pressure steam cleaning for heavy equipment, trucks, and residential work.
-    </p>
-
+    <p class="hero-sub">High-pressure steam cleaning for heavy machinery, big rigs, and fleet trucks. When your equipment works hard, we clean harder.</p>
     <div class="hero-buttons">
-      <a class="btn btn-primary">Request Quote</a>
-      <a class="btn btn-outline">Call Now</a>
+      <a href="mailto:maddoxbarnette10@gmail.com?subject=Request%20for%20Quote" class="btn btn-primary">Request a Quote</a>
+      <a href="tel:2762854605" class="btn btn-outline">Call Now</a>
     </div>
-
-    <!-- NEW -->
-    <p style="font-size:14px; color:#777; margin-top:18px;">
-      Free estimates • Commercial & residential work
-    </p>
-
-    <!-- NEW -->
-    <p class="hero-trust">
-      Reliable • Local • Professional Equipment Cleaning
-    </p>
-
   </div>
 </section>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stat-item">
+    <span class="stat-icon">🔩</span>
+    <span class="stat-text">Heavy Equipment Specialists</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-icon">💨</span>
+    <span class="stat-text">High-Pressure Steam</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-icon">📅</span>
+    <span class="stat-text">7 Days a Week</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-icon">📍</span>
+    <span class="stat-text">Locally Owned & Operated</span>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<div style="background: var(--bg);">
+  <div class="section">
+    <p class="section-label">What We Do</p>
+    <h2>Our Services</h2>
+    <hr class="section-rule">
+
+    <div class="services-grid">
+
+      <div class="card featured">
+        <span class="card-icon">🚜</span>
+        <h3>Heavy Equipment</h3>
+        <p>Deep-clean skidders, loaders, excavators, bulldozers, and any heavy iron. We get into every crevice grease, oil, and mud hides in.</p>
+        <span class="card-detail">Skidders • Loaders • Excavators • Dozers</span>
+      </div>
+
+      <div class="card featured">
+        <span class="card-icon">🚛</span>
+        <h3>Big Rigs & Trucks</h3>
+        <p>Full fleet washdowns for semis, dump trucks, and work vehicles. Keep your trucks road-ready, inspection-ready, and professional-looking.</p>
+        <span class="card-detail">Semi Trucks • Dump Trucks • Fleet Vehicles</span>
+      </div>
+
+      <div class="card card-residential">
+        <span class="card-icon">🏠</span>
+        <div>
+          <h3>Residential</h3>
+          <p>Driveways, sidewalks, siding, decks, and exterior surfaces. Same professional-grade pressure washing — scaled for your home.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- SERVICE AREA -->
+<div class="area-section">
+  <div class="area-inner">
+    <p class="section-label">Where We Work</p>
+    <h2>Service Area</h2>
+    <hr class="section-rule">
+    <p style="color:#aaa; margin-bottom:20px; font-size:15px;">We proudly serve Southwest Virginia — on-site at your job yard, job site, or home.</p>
+
+    <div class="county-tags">
+      <span class="county-tag">Russell County</span>
+      <span class="county-tag">Wise County</span>
+      <span class="county-tag">Washington County</span>
+    </div>
+
+    <div class="map-box">
+      <iframe
+        src="https://www.google.com/maps?q=Russell+County+VA+Wise+County+VA+Washington+County+VA&output=embed"
+        title="Service Area Map">
+      </iframe>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<div class="contact-section">
+  <div class="contact-inner">
+
+    <div class="contact-info">
+      <h2>Get In Touch</h2>
+      <div class="green-line"></div>
+      <div class="contact-row">
+        <div class="contact-item">
+          <label>Owners</label>
+          <p>Maddox Barnette &amp; Heath Kiser</p>
+        </div>
+        <div class="contact-item">
+          <label>Phone</label>
+          <a href="tel:2762854605">276-285-4605</a>
+        </div>
+        <div class="contact-item">
+          <label>Email</label>
+          <a href="mailto:maddoxbarnette10@gmail.com">maddoxbarnette10@gmail.com</a>
+        </div>
+        <div class="contact-item">
+          <label>Hours</label>
+          <p>Monday – Sunday<br>Flexible scheduling available</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-cta">
+      <h3>Ready to Book?</h3>
+      <p>Tell us about your equipment or job and we'll get you a fast, no-hassle custom quote.</p>
+      <a href="mailto:maddoxbarnette10@gmail.com?subject=Request%20for%20Quote" class="btn btn-primary">Email Us a Quote Request</a>
+      <a href="tel:2762854605" class="btn btn-outline">Call 276-285-4605</a>
+      <p class="pricing-note">
+        <strong style="color:#ccc;">Pricing:</strong> Starting at $75–$125/hr depending on equipment size and service type. Custom quotes available for large fleets or recurring jobs.
+      </p>
+    </div>
+
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <span class="footer-brand">Barnette &amp; Kiser Enterprises</span>
+  <span class="footer-copy">Serving Southwest Virginia &mdash; Reliable &bull; Hardworking &bull; Local</span>
+</footer>
 
 </body>
 </html>
