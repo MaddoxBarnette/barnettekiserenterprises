@@ -111,9 +111,23 @@
       text-align: center;
     }
 
+    /* UNDERLINED HEADINGS */
     .section h2 {
       font-size: 28px;
       margin-bottom: 20px;
+      position: relative;
+      display: inline-block;
+      padding-bottom: 8px;
+    }
+
+    .section h2::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 60%;
+      height: 2px;
+      background-color: #2e7d32;
     }
 
     .services {
@@ -245,13 +259,13 @@
   </div>
 </section>
 
-<!-- CONTACT (UPDATED WITH NAMES) -->
+<!-- CONTACT -->
 <section class="section">
   <h2>Contact</h2>
 
   <div class="contact-box">
     <p><strong>Barnette & Kiser Enterprises</strong></p>
-    <p>Owned and operated by Maddox Barnette & Heath Kiser</p>
+    <p>Owned and operated by Maddox Barnette & Kiser</p>
 
     <p><strong>Phone:</strong> 276-285-4605</p>
     <p><strong>Email:</strong> <a href="mailto:maddoxbarnette10@gmail.com">maddoxbarnette10@gmail.com</a></p>
