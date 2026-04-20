@@ -28,13 +28,11 @@
       position: relative;
     }
 
-    /* LEFT LOGO */
     .header-logo {
       width: 60px;
       height: auto;
     }
 
-    /* CENTER TEXT BLOCK */
     .header-center {
       position: absolute;
       left: 50%;
@@ -63,12 +61,11 @@
       url('https://images.unsplash.com/photo-1581092160607-ee22731c2f91') center/cover no-repeat;
     }
 
-    /* WATERMARK LOGO (increased opacity) */
     .hero::before {
       content: "";
       background: url('BKENTERPRISESLOGO.png') no-repeat center;
       background-size: 520px;
-      opacity: 0.18; /* increased from 0.08 */
+      opacity: 0.18;
       position: absolute;
       top: 0;
       left: 0;
@@ -139,6 +136,11 @@
       margin: 0 auto;
     }
 
+    /* CONTACT */
+    .contact-box {
+      line-height: 1.8;
+    }
+
     footer {
       background: #0f0f0f;
       text-align: center;
@@ -154,14 +156,14 @@
 
     /* MOBILE */
     @media (max-width: 600px) {
-      .header {
-        flex-direction: column;
-        gap: 10px;
-      }
-
       .header-center {
         position: static;
         transform: none;
+      }
+
+      .header {
+        flex-direction: column;
+        gap: 10px;
       }
 
       .hero h2 {
@@ -243,12 +245,17 @@
   </div>
 </section>
 
-<!-- CONTACT -->
+<!-- CONTACT (UPDATED WITH NAMES) -->
 <section class="section">
   <h2>Contact</h2>
 
-  <p><strong>Phone:</strong> 276-285-4605</p>
-  <p><strong>Email:</strong> <a href="mailto:maddoxbarnette10@gmail.com">maddoxbarnette10@gmail.com</a></p>
+  <div class="contact-box">
+    <p><strong>Barnette & Kiser Enterprises</strong></p>
+    <p>Owned and operated by Maddox Barnette & Heath Kiser</p>
+
+    <p><strong>Phone:</strong> 276-285-4605</p>
+    <p><strong>Email:</strong> <a href="mailto:maddoxbarnette10@gmail.com">maddoxbarnette10@gmail.com</a></p>
+  </div>
 </section>
 
 <!-- FOOTER -->
