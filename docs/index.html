@@ -19,7 +19,7 @@
     /* HEADER */
     .header {
       background: #0f0f0f;
-      padding: 20px 40px;
+      padding: 18px 40px;
       border-bottom: 3px solid #2e7d32;
 
       display: flex;
@@ -47,25 +47,25 @@
     }
 
     .header-center p {
-      margin: 5px 0 0 0;
+      margin: 6px 0 0 0;
       color: #bdbdbd;
     }
 
     /* HERO */
     .hero {
-      padding: 100px 20px;
+      padding: 110px 20px;
       text-align: center;
       position: relative;
       overflow: hidden;
-      background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
+      background: linear-gradient(rgba(0,0,0,0.78), rgba(0,0,0,0.78)),
       url('https://images.unsplash.com/photo-1581092160607-ee22731c2f91') center/cover no-repeat;
     }
 
     .hero::before {
       content: "";
       background: url('BKENTERPRISESLOGO.png') no-repeat center;
-      background-size: 520px;
-      opacity: 0.18;
+      background-size: 540px;
+      opacity: 0.20;
       position: absolute;
       top: 0;
       left: 0;
@@ -80,14 +80,18 @@
     }
 
     .hero h2 {
-      font-size: 44px;
+      font-size: 46px;
       margin-bottom: 15px;
+      line-height: 1.1;
     }
 
     .hero p {
       font-size: 18px;
       color: #d0d0d0;
-      margin-bottom: 25px;
+      margin-bottom: 28px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .btn {
@@ -99,21 +103,23 @@
       border-radius: 4px;
       display: inline-block;
       margin: 5px;
+      transition: 0.2s ease;
     }
 
     .btn:hover {
       background: #1b5e20;
+      transform: translateY(-1px);
     }
 
     /* SECTIONS */
     .section {
-      padding: 55px 20px;
+      padding: 65px 20px;
       text-align: center;
     }
 
     .section h2 {
       font-size: 28px;
-      margin-bottom: 20px;
+      margin-bottom: 24px;
       position: relative;
       display: inline-block;
       padding-bottom: 8px;
@@ -129,6 +135,7 @@
       background-color: #2e7d32;
     }
 
+    /* SERVICES */
     .services {
       display: flex;
       flex-wrap: wrap;
@@ -142,17 +149,30 @@
       width: 280px;
       border: 1px solid #333;
       border-top: 3px solid #2e7d32;
+      transition: 0.2s ease;
     }
 
+    .card:hover {
+      transform: translateY(-4px);
+      border-top: 3px solid #43a047;
+    }
+
+    /* MAP */
     .map-box {
       max-width: 900px;
       margin: 0 auto;
     }
 
+    /* CONTACT */
     .contact-box {
-      line-height: 1.8;
+      line-height: 1.9;
     }
 
+    .contact-box p {
+      margin: 6px 0;
+    }
+
+    /* FOOTER */
     footer {
       background: #0f0f0f;
       text-align: center;
@@ -179,11 +199,11 @@
       }
 
       .hero h2 {
-        font-size: 32px;
+        font-size: 34px;
       }
 
       .hero::before {
-        background-size: 300px;
+        background-size: 320px;
       }
     }
   </style>
@@ -191,9 +211,8 @@
 
 <body>
 
-<!-- HEADER -->
 <header class="header">
-  <img src="BKENTERPRISESLOGO.png" alt="BK Enterprises Logo" class="header-logo">
+  <img src="BKENTERPRISESLOGO.png" class="header-logo">
 
   <div class="header-center">
     <h1>Barnette & Kiser Enterprises</h1>
@@ -201,23 +220,16 @@
   </div>
 </header>
 
-<!-- HERO -->
 <section class="hero">
   <div class="hero-content">
     <h2>Built for Hard Work. Cleaned Right.</h2>
     <p>High-pressure steam cleaning for heavy equipment, trucks, and homes across Southwest Virginia.</p>
 
-    <a href="mailto:maddoxbarnette10@gmail.com?subject=Request%20for%20Quote%20-%20Barnette%20%26%20Kiser%20Enterprises" class="btn">
-      Request a Quote
-    </a>
-
-    <a href="tel:2762854605" class="btn">
-      Call Now
-    </a>
+    <a href="mailto:maddoxbarnette10@gmail.com?subject=Request%20for%20Quote" class="btn">Request a Quote</a>
+    <a href="tel:2762854605" class="btn">Call Now</a>
   </div>
 </section>
 
-<!-- SERVICES -->
 <section class="section">
   <h2>Our Services</h2>
 
@@ -239,25 +251,21 @@
   </div>
 </section>
 
-<!-- SERVICE AREA -->
 <section class="section">
   <h2>Service Area</h2>
-  <p>We proudly serve Southwest Virginia, including:</p>
-  <p><strong>Russell County • Wise County • Washington County</strong></p>
+  <p>We proudly serve Southwest Virginia:</p>
+  <p><strong>Russell • Wise • Washington County</strong></p>
 
   <div class="map-box">
     <iframe
       src="https://www.google.com/maps?q=Russell+County+VA+Wise+County+VA+Washington+County+VA&output=embed"
       width="100%"
       height="350"
-      style="border:0; margin-top:20px;"
-      allowfullscreen=""
-      loading="lazy">
+      style="border:0; margin-top:20px;">
     </iframe>
   </div>
 </section>
 
-<!-- CONTACT -->
 <section class="section">
   <h2>Contact</h2>
 
@@ -267,12 +275,13 @@
 
     <p><strong>Hours:</strong> Monday–Sunday • Flexible scheduling available</p>
 
+    <p><strong>Pricing:</strong> Starting at $75–$125/hour depending on equipment and service type • Custom quotes available</p>
+
     <p><strong>Phone:</strong> 276-285-4605</p>
     <p><strong>Email:</strong> <a href="mailto:maddoxbarnette10@gmail.com">maddoxbarnette10@gmail.com</a></p>
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   Serving Southwest Virginia • Reliable • Hardworking • Local
 </footer>
