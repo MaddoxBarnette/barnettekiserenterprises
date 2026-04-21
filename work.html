@@ -394,6 +394,16 @@
       text-align: center;
     }
 
+    .cta-strip-eyebrow {
+      font-family: 'Oswald', sans-serif;
+      font-size: 18px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--green-bright);
+      margin-bottom: 10px;
+      font-weight: 500;
+    }
+
     .cta-strip h2 {
       font-family: 'Oswald', sans-serif;
       font-size: clamp(22px, 3vw, 32px);
@@ -413,6 +423,7 @@
     }
 
     .cta-strip .btn { font-size: 15px; padding: 13px 32px; }
+    .cta-strip .btn:hover { transform: translateY(-1px); }
 
     /* ── FOOTER ───────────────────────────── */
     footer {
@@ -437,6 +448,14 @@
       font-size: 13px;
       color: var(--muted);
     }
+
+    footer .footer-copy a {
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    footer .footer-copy a:hover { color: var(--green-bright); }
 
     footer .footer-copy a {
       color: #666;
@@ -590,6 +609,7 @@
 
 <!-- CTA STRIP -->
 <div class="cta-strip">
+  <p class="cta-strip-eyebrow">Ready to Get Started?</p>
   <h2>Want Results Like These?</h2>
   <p>Get a fast, no-hassle quote for your equipment or property.</p>
   <a href="mailto:barnetteandkiserenterprises@gmail.com?subject=Request%20for%20Quote" class="btn btn-primary">Request a Quote</a>
