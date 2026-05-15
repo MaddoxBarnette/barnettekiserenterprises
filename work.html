@@ -197,6 +197,15 @@
       background: rgba(46,125,50,0.08);
     }
 
+    .page-hero-eyebrow-wrap {
+      display: block;
+      margin-bottom: 22px;
+    }
+
+    .page-hero-eyebrow-wrap .page-hero-eyebrow {
+      margin-bottom: 0;
+    }
+
     .page-hero h1 {
       font-family: 'Oswald', sans-serif;
       font-size: clamp(42px, 6vw, 60px);
@@ -583,11 +592,11 @@
 </header>
 
 <!-- PAGE HERO -->
-<section class="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-watermark"></div>
+<div class="page-hero">
   <div class="page-hero-content">
-    <span class="page-hero-eyebrow">Results You Can See</span>
+    <div class="page-hero-eyebrow-wrap">
+      <span class="page-hero-eyebrow">Results You Can See</span>
+    </div>
     <h1>Our <em>Work</em></h1>
     <p>Before &amp; after shots from real jobs &mdash; heavy equipment, big rigs, and residential cleans across Southwest Virginia and Northeast Tennessee.</p>
   </div>
@@ -684,7 +693,7 @@
 
 <!-- CTA STRIP -->
 <div class="cta-strip">
-  <p class="cta-strip-eyebrow">Ready to Get Started?</p>
+  <p class="cta-strip-eyebrow" style="color: var(--green-bright);">Ready to Get Started?</p>
   <h2>Want Results Like These?</h2>
   <p>Get a fast, no-hassle quote for your equipment or property.</p>
   <div class="cta-strip-buttons">
