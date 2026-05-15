@@ -11,11 +11,9 @@
   <meta property="og:image" content="https://barnettekiserenterprises.com/BKENTERPRISESLOGO.png">
   <meta property="og:url" content="https://barnettekiserenterprises.com/privacy.html">
   <meta property="og:type" content="website">
-  <link rel="icon" href="favicon.png?v=2">
-  <link rel="shortcut icon" href="favicon.png?v=2">
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="favicon.png">
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Barlow:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="icon" href="favicon.png?v=3">
+  <link rel="shortcut icon" href="favicon.png?v=3">
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
 
   <style>
     *, *::before, *::after { box-sizing: border-box; }
@@ -24,11 +22,12 @@
       --green: #2e7d32;
       --green-bright: #43a047;
       --green-dim: #1b5e20;
-      --bg: #111;
-      --surface: #1a1a1a;
+      --bg: #0f0f0f;
+      --surface: #181818;
       --border: #2a2a2a;
-      --text: #e8e8e8;
-      --muted: #888;
+      --text: #ececec;
+      --text-muted: #aaa;
+      --text-dim: #777;
     }
 
     html { scroll-behavior: smooth; }
@@ -39,16 +38,21 @@
       background: var(--bg);
       color: var(--text);
       overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      font-size: 16px;
     }
 
+    /* ── HEADER ───────────────────────────── */
     .header {
-      background: #0a0a0a;
-      padding: 0 40px;
-      height: 72px;
+      background: rgba(10,10,10,0.96);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      padding: 0 48px;
+      height: 76px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      border-bottom: 2px solid var(--green);
+      border-bottom: 1px solid var(--border);
       position: sticky;
       top: 0;
       z-index: 100;
@@ -67,158 +71,263 @@
     .brand-text { font-family: 'Oswald', sans-serif; }
 
     .brand-text .name {
-      font-size: 20px;
+      font-size: 22px;
       font-weight: 600;
-      letter-spacing: 1px;
+      letter-spacing: 1.5px;
       line-height: 1;
       text-transform: uppercase;
+      color: var(--text);
     }
 
     .brand-text .tagline {
-      font-size: 11px;
+      font-size: 12px;
       color: var(--green-bright);
-      letter-spacing: 2px;
+      letter-spacing: 2.5px;
       text-transform: uppercase;
-      font-weight: 400;
-      margin-top: 3px;
+      font-weight: 500;
+      margin-top: 5px;
+    }
+
+    .header-nav {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .nav-link {
+      font-family: 'Oswald', sans-serif;
+      font-size: 15px;
+      font-weight: 500;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      text-decoration: none;
+      padding: 10px 16px;
+      transition: color 0.2s;
+    }
+
+    .nav-link:hover { color: var(--green-bright); }
+
+    .nav-divider {
+      width: 1px;
+      height: 22px;
+      background: var(--border);
+      margin: 0 6px;
     }
 
     .btn {
       font-family: 'Oswald', sans-serif;
       font-weight: 600;
       font-size: 14px;
-      letter-spacing: 1px;
+      letter-spacing: 1.5px;
       text-transform: uppercase;
-      padding: 10px 22px;
+      padding: 12px 24px;
       text-decoration: none;
       border-radius: 2px;
       transition: all 0.2s;
       display: inline-flex;
       align-items: center;
-      gap: 7px;
+      gap: 6px;
+      cursor: pointer;
+      white-space: nowrap;
     }
 
     .btn-primary {
       background: var(--green);
       color: #fff;
-      border: 2px solid var(--green);
+      border: 1px solid var(--green);
     }
 
     .btn-primary:hover {
       background: var(--green-bright);
       border-color: var(--green-bright);
+      transform: translateY(-1px);
     }
 
+    .btn-ghost {
+      background: transparent;
+      color: var(--text-muted);
+      border: 1px solid var(--border);
+    }
+
+    .btn-ghost:hover { border-color: #555; color: var(--text); }
+
+    /* ── CONTENT ──────────────────────────── */
     .content {
-      max-width: 760px;
+      max-width: 820px;
       margin: 0 auto;
-      padding: 64px 24px 80px;
+      padding: 88px 32px 100px;
     }
 
-    .content .eyebrow {
+    .content-eyebrow {
+      display: inline-block;
       font-family: 'Oswald', sans-serif;
-      font-size: 18px;
-      letter-spacing: 3px;
+      font-size: 15px;
+      font-weight: 500;
+      letter-spacing: 4px;
       text-transform: uppercase;
       color: var(--green-bright);
-      margin-bottom: 10px;
-      font-weight: 500;
+      margin-bottom: 22px;
+      padding: 8px 20px;
+      border: 1px solid rgba(67,160,71,0.35);
+      border-radius: 2px;
+      background: rgba(46,125,50,0.08);
     }
 
     .content h1 {
       font-family: 'Oswald', sans-serif;
-      font-size: clamp(28px, 4vw, 42px);
+      font-size: clamp(38px, 5.5vw, 52px);
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 2px;
       display: inline-block;
       border-bottom: 3px solid var(--green);
-      padding-bottom: 6px;
-      margin: 0 0 16px;
+      padding-bottom: 14px;
+      margin: 0 0 18px;
+      color: #fff;
     }
 
     .last-updated {
       font-size: 13px;
-      color: var(--muted);
-      margin-bottom: 40px;
+      color: var(--text-muted);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 56px;
+      font-family: 'Oswald', sans-serif;
+      font-weight: 500;
     }
 
     .content h2 {
       font-family: 'Oswald', sans-serif;
-      font-size: 20px;
+      font-size: 22px;
       font-weight: 600;
       text-transform: uppercase;
-      letter-spacing: 1px;
+      letter-spacing: 2px;
       color: var(--green-bright);
-      margin: 36px 0 10px;
+      margin: 48px 0 18px;
     }
 
     .content p {
-      font-size: 15px;
-      color: #bbb;
-      line-height: 1.75;
-      margin: 0 0 16px;
+      font-size: 17px;
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin: 0 0 20px;
     }
 
-    .content a { color: var(--green-bright); text-decoration: none; }
-    .content a:hover { text-decoration: underline; }
+    .content a {
+      color: var(--green-bright);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(67,160,71,0.4);
+      transition: border-color 0.2s;
+    }
 
+    .content a:hover { border-bottom-color: var(--green-bright); }
+
+    /* ── FOOTER ───────────────────────────── */
     footer {
-      background: #080808;
-      border-top: 2px solid var(--green-dim);
-      padding: 24px 40px;
+      background: #070707;
+      border-top: 1px solid var(--border);
+      padding: 32px 48px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
-      gap: 10px;
+      gap: 14px;
     }
 
-    footer .footer-brand {
+    .footer-brand {
       font-family: 'Oswald', sans-serif;
-      font-size: 15px;
+      font-size: 16px;
       font-weight: 600;
-      letter-spacing: 1px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--text);
     }
 
-    footer .footer-copy { font-size: 13px; color: var(--muted); }
+    .footer-copy {
+      font-size: 13px;
+      color: var(--text-muted);
+      letter-spacing: 0.5px;
+    }
 
-    footer .footer-copy a {
-      color: var(--muted);
+    .footer-copy a {
+      color: var(--text-muted);
       text-decoration: none;
       transition: color 0.2s;
     }
 
-    footer .footer-copy a:hover { color: var(--green-bright); }
+    .footer-copy a:hover { color: var(--green-bright); }
 
-    @media (max-width: 680px) {
-      .header { padding: 0 16px; height: auto; min-height: 64px; padding-top: 10px; padding-bottom: 10px; }
-      .brand-text .name { font-size: 17px; }
-      .btn { font-size: 13px; padding: 9px 16px; }
-      .content { padding: 48px 16px 60px; }
-      footer { flex-direction: column; text-align: center; padding: 20px 16px; }
+    /* ── TABLET ───────────────────────────── */
+    @media (max-width: 968px) {
+      .header { padding: 0 28px; }
+      .content { padding: 72px 28px 80px; }
+    }
+
+    /* ── MOBILE ───────────────────────────── */
+    @media (max-width: 768px) {
+      .header { padding: 0 18px; height: 70px; }
+      .header-nav { gap: 6px; }
+      .nav-link { padding: 8px 10px; font-size: 13px; letter-spacing: 1.2px; }
+      .nav-divider { display: none; }
+      .btn-ghost { display: none; }
+      .brand-text .name { font-size: 18px; letter-spacing: 1.2px; }
+      .brand-text .tagline { font-size: 10px; letter-spacing: 2px; }
+      .header-logo { width: 42px; height: 42px; }
+      .header-nav .btn { padding: 10px 18px; font-size: 13px; }
+
+      .content { padding: 60px 22px 76px; }
+      .content-eyebrow { font-size: 12px; padding: 6px 16px; letter-spacing: 3px; }
+      .content h1 { font-size: clamp(30px, 8vw, 42px); padding-bottom: 10px; }
+      .content h2 { font-size: 19px; margin-top: 40px; letter-spacing: 1.5px; }
+      .content p { font-size: 16px; line-height: 1.75; }
+      .last-updated { font-size: 12px; margin-bottom: 40px; }
+
+      footer { flex-direction: column; text-align: center; padding: 28px 22px; gap: 12px; }
+      .footer-brand { font-size: 14px; }
+      .footer-copy { font-size: 12px; line-height: 1.7; }
+    }
+
+    /* ── SMALL MOBILE ─────────────────────── */
+    @media (max-width: 420px) {
+      .header { padding: 0 14px; }
+      .brand-text .name { font-size: 16px; letter-spacing: 1px; }
+      .brand-text .tagline { font-size: 9px; }
+      .header-logo { width: 38px; height: 38px; }
+      .header-nav { gap: 4px; }
+      .nav-link { padding: 6px 8px; font-size: 12px; }
+      .header-nav .btn { padding: 9px 14px; font-size: 12px; }
     }
   </style>
 </head>
 <body>
 
+<!-- HEADER -->
 <header class="header">
   <a href="index.html" class="header-brand">
-    <img src="BKENTERPRISESLOGO.png" class="header-logo" alt="BK Logo">
+    <img src="BKENTERPRISESLOGO.png" class="header-logo" alt="BK Enterprises Logo">
     <div class="brand-text">
-      <div class="name">Barnette & Kiser</div>
+      <div class="name">Barnette &amp; Kiser</div>
       <div class="tagline">Steam &amp; Pressure Cleaning</div>
     </div>
   </a>
-  <a href="mailto:barnetteandkiserenterprises@gmail.com?subject=Request%20for%20Quote" class="btn btn-primary">Get a Quote</a>
+  <nav class="header-nav">
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="work.html" class="nav-link">Our Work</a>
+    <div class="nav-divider"></div>
+    <a href="tel:2763448520" class="btn btn-ghost">276-344-8520</a>
+    <a href="https://calendly.com/barnetteandkiserenterprises/30min" target="_blank" rel="noopener" class="btn btn-primary">Book Now</a>
+  </nav>
 </header>
 
+<!-- CONTENT -->
 <div class="content">
-  <p class="eyebrow">Legal</p>
+  <span class="content-eyebrow">Legal</span>
+  <br>
   <h1>Privacy Policy</h1>
-  <p class="last-updated">Last updated: May 25, 2026</p>
+  <p class="last-updated">Last Updated &middot; May 25, 2026</p>
 
-  <p>Barnette &amp; Kiser Enterprises ("we," "us," or "our") operates the website barnettekiserenterprises.com. This page explains what information we collect, how we use it, and your rights regarding it.</p>
+  <p>Barnette &amp; Kiser Enterprises, LLC (&ldquo;we,&rdquo; &ldquo;us,&rdquo; or &ldquo;our&rdquo;) operates the website barnettekiserenterprises.com. This page explains what information we collect, how we use it, and your rights regarding it.</p>
 
   <h2>Information We Collect</h2>
   <p>We do not collect personal information automatically when you visit our website. The only information we receive is what you voluntarily provide when you contact us &mdash; such as your name, phone number, email address, or details about your equipment or job when you reach out for a quote.</p>
@@ -227,10 +336,10 @@
   <p>Any information you send us is used solely to respond to your inquiry and provide you with a quote or schedule service. We do not sell, trade, or share your information with third parties.</p>
 
   <h2>Email &amp; Phone Contact</h2>
-  <p>When you email us at <a href="mailto:barnetteandkiserenterprises@gmail.com">barnetteandkiserenterprises@gmail.com</a> or call <a href="tel:2762854605">276-285-4605</a>, your contact details are used only to communicate with you about your service request.</p>
+  <p>When you email us at <a href="mailto:barnetteandkiserenterprises@gmail.com">barnetteandkiserenterprises@gmail.com</a> or call <a href="tel:2763448520">276-344-8520</a>, your contact details are used only to communicate with you about your service request.</p>
 
   <h2>Third-Party Services</h2>
-  <p>Our website uses Google Fonts for typography and an embedded Google Map for our service area. These services are provided by Google and are subject to Google's own privacy policy at <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a>.</p>
+  <p>Our website uses Google Fonts for typography and an embedded Google Map for our service area. We also use Calendly for online appointment scheduling. These services are provided by Google and Calendly and are subject to their respective privacy policies.</p>
 
   <h2>Cookies</h2>
   <p>Our website does not use tracking cookies or analytics software. We do not monitor visitor behavior or store any data on your device.</p>
@@ -242,12 +351,13 @@
   <p>We may update this privacy policy from time to time. Any changes will be reflected on this page with an updated date at the top.</p>
 
   <h2>Contact Us</h2>
-  <p>If you have any questions about this privacy policy, you can reach us at <a href="mailto:barnetteandkiserenterprises@gmail.com">barnetteandkiserenterprises@gmail.com</a> or by calling <a href="tel:2762854605">276-285-4605</a>.</p>
+  <p>If you have any questions about this privacy policy, you can reach us at <a href="mailto:barnetteandkiserenterprises@gmail.com">barnetteandkiserenterprises@gmail.com</a> or by calling <a href="tel:2763448520">276-344-8520</a>.</p>
 </div>
 
+<!-- FOOTER -->
 <footer>
   <span class="footer-brand">Barnette &amp; Kiser Enterprises</span>
-  <span class="footer-copy">&copy; 2026 Barnette &amp; Kiser Enterprises &mdash; Reliable &bull; Hardworking &bull; Local &bull; <a href="privacy.html">Privacy Policy</a></span>
+  <span class="footer-copy">&copy; 2026 Barnette &amp; Kiser Enterprises &nbsp;&middot;&nbsp; Reliable &nbsp;&middot;&nbsp; Hardworking &nbsp;&middot;&nbsp; Local &nbsp;&middot;&nbsp; <a href="privacy.html">Privacy Policy</a></span>
 </footer>
 
 </body>
