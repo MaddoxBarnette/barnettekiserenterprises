@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>Barnette & Kiser Enterprises</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Barnette & Kiser Enterprises — Southwest Virginia's heavy equipment and pressure washing specialists. Steam cleaning for skidders, big rigs, fleet trucks, and residential properties. Serving Russell, Wise, and Washington County. Call 276-285-4605.">
+  <meta name="description" content="Barnette & Kiser Enterprises — Southwest Virginia's heavy equipment and pressure washing specialists. Steam cleaning for skidders, big rigs, fleet trucks, and residential properties. Serving Russell, Wise, Smyth, and Washington County. Call 276-344-8520.">
   <link rel="canonical" href="https://barnettekiserenterprises.com/">
   <meta property="og:title" content="Barnette & Kiser Enterprises">
   <meta property="og:description" content="Southwest Virginia's heavy equipment and pressure washing specialists. Steam cleaning for skidders, big rigs, fleet trucks, and residential properties.">
@@ -15,7 +15,7 @@
   <link rel="shortcut icon" href="favicon.png?v=2">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon.png">
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Barlow:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
 
   <style>
     *, *::before, *::after { box-sizing: border-box; }
@@ -24,12 +24,13 @@
       --green: #2e7d32;
       --green-bright: #43a047;
       --green-dim: #1b5e20;
-      --bg: #111;
-      --surface: #1a1a1a;
-      --surface2: #222;
-      --border: #2a2a2a;
+      --bg: #0f0f0f;
+      --surface: #181818;
+      --surface2: #202020;
+      --border: #282828;
       --text: #e8e8e8;
-      --muted: #888;
+      --text-muted: #999;
+      --text-dim: #666;
     }
 
     html { scroll-behavior: smooth; }
@@ -40,17 +41,20 @@
       background: var(--bg);
       color: var(--text);
       overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
     }
 
     /* ── HEADER ───────────────────────────── */
     .header {
-      background: #0a0a0a;
-      padding: 0 40px;
+      background: rgba(10,10,10,0.95);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      padding: 0 48px;
       height: 72px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      border-bottom: 2px solid var(--green);
+      border-bottom: 1px solid var(--border);
       position: sticky;
       top: 0;
       z-index: 100;
@@ -59,72 +63,82 @@
     .header-brand {
       display: flex;
       align-items: center;
-      gap: 14px;
+      gap: 12px;
       text-decoration: none;
       color: inherit;
     }
 
-    .header-logo { width: 48px; height: 48px; object-fit: contain; }
+    .header-logo { width: 44px; height: 44px; object-fit: contain; }
 
     .brand-text { font-family: 'Oswald', sans-serif; }
 
     .brand-text .name {
-      font-size: 20px;
+      font-size: 18px;
       font-weight: 600;
-      letter-spacing: 1px;
+      letter-spacing: 1.5px;
       line-height: 1;
       text-transform: uppercase;
+      color: var(--text);
     }
 
     .brand-text .tagline {
-      font-size: 11px;
+      font-size: 10px;
       color: var(--green-bright);
-      letter-spacing: 2px;
+      letter-spacing: 2.5px;
       text-transform: uppercase;
       font-weight: 400;
-      margin-top: 3px;
+      margin-top: 4px;
     }
 
     .header-nav {
       display: flex;
-      gap: 10px;
       align-items: center;
+      gap: 6px;
     }
 
     .nav-link {
       font-family: 'Oswald', sans-serif;
-      font-size: 13px;
+      font-size: 12px;
+      font-weight: 500;
       letter-spacing: 1.5px;
       text-transform: uppercase;
-      color: var(--muted);
+      color: var(--text-muted);
       text-decoration: none;
-      padding: 6px 12px;
+      padding: 8px 14px;
       transition: color 0.2s;
+      border-radius: 2px;
     }
 
-    .nav-link:hover, .nav-link.active { color: var(--green-bright); }
+    .nav-link:hover { color: var(--text); }
+
+    .nav-divider {
+      width: 1px;
+      height: 20px;
+      background: var(--border);
+      margin: 0 4px;
+    }
 
     .btn {
       font-family: 'Oswald', sans-serif;
       font-weight: 600;
-      font-size: 14px;
-      letter-spacing: 1px;
+      font-size: 12px;
+      letter-spacing: 1.5px;
       text-transform: uppercase;
-      padding: 10px 22px;
+      padding: 9px 20px;
       text-decoration: none;
       border-radius: 2px;
       transition: all 0.2s;
       display: inline-flex;
       align-items: center;
-      gap: 7px;
+      gap: 6px;
       cursor: pointer;
-      border: 2px solid transparent;
+      white-space: nowrap;
     }
 
     .btn-primary {
       background: var(--green);
       color: #fff;
-      border-color: var(--green);
+      border: 1px solid var(--green);
     }
 
     .btn-primary:hover {
@@ -133,10 +147,21 @@
       transform: translateY(-1px);
     }
 
+    .btn-ghost {
+      background: transparent;
+      color: var(--text-muted);
+      border: 1px solid var(--border);
+    }
+
+    .btn-ghost:hover {
+      border-color: #555;
+      color: var(--text);
+    }
+
     .btn-outline {
       background: transparent;
       color: var(--text);
-      border-color: #444;
+      border: 1px solid #3a3a3a;
     }
 
     .btn-outline:hover {
@@ -147,218 +172,254 @@
     /* ── HERO ─────────────────────────────── */
     .hero {
       position: relative;
-      min-height: 78vh;
+      min-height: 82vh;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
       overflow: hidden;
-      background: #111;
+      background: var(--bg);
     }
 
-    .hero::after {
-      content: "";
+    .hero-bg {
       position: absolute;
       inset: 0;
-      background: repeating-linear-gradient(
-        -55deg,
-        transparent,
-        transparent 120px,
-        rgba(46,125,50,0.03) 120px,
-        rgba(46,125,50,0.03) 121px
-      );
-      pointer-events: none;
+      background:
+        radial-gradient(ellipse 60% 50% at 50% 100%, rgba(46,125,50,0.08) 0%, transparent 70%),
+        repeating-linear-gradient(-55deg, transparent, transparent 80px, rgba(46,125,50,0.02) 80px, rgba(46,125,50,0.02) 81px);
     }
 
-    .hero::before {
-      content: "";
+    .hero-watermark {
+      position: absolute;
+      inset: 0;
       background: url('BKENTERPRISESLOGO.png') no-repeat center;
-      background-size: 420px;
-      opacity: 0.12;
-      position: absolute;
-      inset: 0;
+      background-size: 480px;
+      opacity: 0.07;
       z-index: 0;
     }
 
     .hero-content {
       position: relative;
       z-index: 1;
-      max-width: 720px;
-      padding: 0 24px;
+      max-width: 760px;
+      padding: 0 32px;
     }
 
     .hero-eyebrow {
+      display: inline-block;
       font-family: 'Oswald', sans-serif;
-      font-size: 17px;
-      letter-spacing: 3px;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 4px;
       text-transform: uppercase;
       color: var(--green-bright);
-      margin-bottom: 16px;
-      font-weight: 500;
+      margin-bottom: 24px;
+      padding: 6px 16px;
+      border: 1px solid rgba(67,160,71,0.3);
+      border-radius: 2px;
+      background: rgba(46,125,50,0.08);
     }
 
     .hero h1 {
       font-family: 'Oswald', sans-serif;
-      font-size: clamp(34px, 6vw, 62px);
+      font-size: clamp(40px, 6.5vw, 72px);
       font-weight: 700;
-      line-height: 1.0;
+      line-height: 0.95;
       text-transform: uppercase;
-      margin: 0 0 18px;
+      margin: 0 0 24px;
       letter-spacing: 2px;
+      color: #fff;
     }
 
-    .hero h1 span { color: var(--green-bright); }
+    .hero h1 em {
+      font-style: normal;
+      color: var(--green-bright);
+    }
 
     .hero-sub {
-      font-size: 16px;
-      color: #b0b0b0;
-      max-width: 500px;
-      margin: 0 auto 30px;
-      line-height: 1.6;
+      font-size: 17px;
+      color: var(--text-muted);
+      max-width: 520px;
+      margin: 0 auto 40px;
+      line-height: 1.7;
       font-weight: 400;
     }
 
     .hero-buttons {
       display: flex;
-      gap: 12px;
+      gap: 10px;
       justify-content: center;
       flex-wrap: wrap;
     }
 
-    .hero-buttons .btn { font-size: 14px; padding: 12px 28px; }
+    .hero-buttons .btn {
+      font-size: 13px;
+      padding: 13px 32px;
+    }
 
     /* ── STATS BAR ────────────────────────── */
     .stats-bar {
       background: var(--green-dim);
-      padding: 0;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      border-bottom: 1px solid rgba(0,0,0,0.2);
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
     }
 
     .stat-item {
-      padding: 14px 32px;
-      text-align: center;
-      border-right: 1px solid rgba(255,255,255,0.12);
+      padding: 16px 36px;
       display: flex;
       align-items: center;
       gap: 10px;
+      border-right: 1px solid rgba(255,255,255,0.1);
     }
 
     .stat-item:last-child { border-right: none; }
-    .stat-icon { font-size: 20px; }
+
+    .stat-dot {
+      width: 6px;
+      height: 6px;
+      background: rgba(255,255,255,0.5);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
 
     .stat-text {
       font-family: 'Oswald', sans-serif;
-      font-size: 13px;
+      font-size: 12px;
       font-weight: 500;
-      letter-spacing: 1.5px;
+      letter-spacing: 2px;
       text-transform: uppercase;
+      color: rgba(255,255,255,0.9);
     }
 
-    /* ── SECTIONS ─────────────────────────── */
+    /* ── SECTION COMMONS ──────────────────── */
     .section {
-      padding: 80px 24px;
+      padding: 96px 32px;
       text-align: center;
       max-width: 1100px;
       margin: 0 auto;
     }
 
-    .section-label {
+    .section-eyebrow {
       font-family: 'Oswald', sans-serif;
-      font-size: 18px;
-      letter-spacing: 3px;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 4px;
       text-transform: uppercase;
       color: var(--green-bright);
-      margin-bottom: 10px;
-      font-weight: 500;
+      margin-bottom: 14px;
     }
 
-    .section h2 {
+    .section-title {
       font-family: 'Oswald', sans-serif;
-      font-size: clamp(30px, 4.5vw, 42px);
+      font-size: clamp(28px, 4vw, 40px);
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 2px;
+      margin: 0 0 48px;
+      color: #fff;
       display: inline-block;
-      border-bottom: 3px solid var(--green);
-      padding-bottom: 6px;
-      margin: 0 0 40px;
+      border-bottom: 2px solid var(--green);
+      padding-bottom: 10px;
     }
 
-    .section-rule { display: none; }
-
     /* ── SERVICES ─────────────────────────── */
+    .services-bg { background: var(--bg); }
+
     .services-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 16px;
+      gap: 1px;
       max-width: 900px;
       margin: 0 auto;
+      background: var(--border);
+      border: 1px solid var(--border);
     }
 
     .card {
       background: var(--surface);
-      border: 1px solid var(--border);
-      border-top: 3px solid var(--green);
-      padding: 36px 30px;
+      padding: 40px 36px;
       text-align: left;
-      transition: all 0.22s ease;
+      transition: background 0.2s;
       position: relative;
-      overflow: hidden;
     }
 
-    .card::before {
-      content: "";
+    .card:hover { background: var(--surface2); }
+
+    .card-accent {
       position: absolute;
-      top: 0; right: 0;
-      width: 80px; height: 80px;
-      background: radial-gradient(circle at top right, rgba(46,125,50,0.12), transparent 70%);
+      top: 0;
+      left: 0;
+      width: 3px;
+      height: 100%;
+      background: var(--green);
+      opacity: 0;
+      transition: opacity 0.2s;
     }
 
-    .card:hover {
-      transform: translateY(-4px);
-      border-top-color: var(--green-bright);
-      background: #1e1e1e;
+    .card:hover .card-accent { opacity: 1; }
+
+    .card-number {
+      font-family: 'Oswald', sans-serif;
+      font-size: 11px;
+      letter-spacing: 3px;
+      color: var(--text-dim);
+      margin-bottom: 20px;
+      font-weight: 500;
     }
-
-    .card.featured { border-top-width: 4px; }
-
-    .card-icon { font-size: 38px; margin-bottom: 16px; display: block; }
 
     .card h3 {
       font-family: 'Oswald', sans-serif;
-      font-size: 22px;
+      font-size: 20px;
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 1px;
-      margin: 0 0 10px;
+      margin: 0 0 12px;
+      color: #fff;
     }
 
-    .card p { font-size: 15px; color: #aaa; line-height: 1.65; margin: 0 0 16px; }
+    .card p {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin: 0 0 20px;
+    }
 
     .card-detail {
-      font-size: 13px;
+      font-size: 11px;
       color: var(--green-bright);
       font-family: 'Oswald', sans-serif;
-      letter-spacing: 0.5px;
+      letter-spacing: 1.5px;
       font-weight: 500;
+      text-transform: uppercase;
     }
 
     .card-residential {
       grid-column: 1 / -1;
       display: grid;
-      grid-template-columns: auto 1fr;
-      gap: 20px;
-      align-items: center;
-      border-top-color: #555;
-      opacity: 0.88;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
     }
 
-    .card-residential:hover { border-top-color: var(--green); opacity: 1; }
-    .card-residential .card-icon { margin-bottom: 0; font-size: 32px; }
-    .card-residential h3 { font-size: 18px; margin-bottom: 4px; }
-    .card-residential p { margin-bottom: 0; font-size: 14px; }
+    .card-residential .card-left {
+      padding: 32px 36px;
+      border-right: 1px solid var(--border);
+    }
+
+    .card-residential .card-right {
+      padding: 32px 36px;
+      display: flex;
+      align-items: center;
+    }
+
+    .card-residential .card-right p {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin: 0;
+    }
 
     /* ── SERVICE AREA ─────────────────────── */
     .area-section {
@@ -368,133 +429,107 @@
     }
 
     .area-inner {
-      padding: 80px 24px;
+      padding: 96px 32px;
       max-width: 1100px;
       margin: 0 auto;
       text-align: center;
     }
 
-    .area-inner h2 {
-      font-family: 'Oswald', sans-serif;
-      font-size: clamp(30px, 4.5vw, 42px);
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      display: inline-block;
-      border-bottom: 3px solid var(--green);
-      padding-bottom: 6px;
-      margin: 0 0 40px;
-    }
-
-    .area-inner hr.section-rule { display: none; }
-
-    .area-inner .section-label {
-      font-family: 'Oswald', sans-serif;
-      font-size: 18px;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: var(--green-bright);
-      margin-bottom: 10px;
-      font-weight: 500;
-    }
-
     .county-tags {
       display: flex;
-      gap: 12px;
+      gap: 8px;
       justify-content: center;
       flex-wrap: wrap;
-      margin-bottom: 32px;
+      margin-bottom: 40px;
     }
 
     .county-tag {
       font-family: 'Oswald', sans-serif;
-      font-size: 13px;
+      font-size: 11px;
       letter-spacing: 2px;
       text-transform: uppercase;
-      padding: 8px 20px;
-      border: 1px solid var(--green);
+      padding: 7px 18px;
+      border: 1px solid rgba(46,125,50,0.4);
       color: var(--green-bright);
+      background: rgba(46,125,50,0.06);
       border-radius: 2px;
     }
 
     .map-box iframe {
       width: 100%;
-      height: 360px;
+      height: 380px;
       border: 0;
       border-radius: 2px;
-      filter: grayscale(80%) brightness(0.75);
-      margin-top: 8px;
+      filter: grayscale(90%) brightness(0.65) contrast(1.1);
       display: block;
     }
 
     /* ── CONTACT ──────────────────────────── */
-    .contact-section { background: #0d0d0d; }
+    .contact-section { background: #0a0a0a; }
 
     .contact-inner {
-      max-width: 900px;
+      max-width: 960px;
       margin: 0 auto;
-      padding: 80px 24px;
+      padding: 96px 32px;
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 60px;
+      gap: 80px;
       align-items: start;
-      text-align: left;
     }
 
     .contact-eyebrow {
       font-family: 'Oswald', sans-serif;
-      font-size: 18px;
-      letter-spacing: 3px;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 4px;
       text-transform: uppercase;
       color: var(--green-bright);
-      margin-bottom: 10px;
-      font-weight: 500;
+      margin-bottom: 14px;
     }
 
-    .contact-info h2 {
+    .contact-title {
       font-family: 'Oswald', sans-serif;
-      font-size: clamp(30px, 4.5vw, 42px);
+      font-size: clamp(26px, 4vw, 38px);
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 2px;
+      color: #fff;
       display: inline-block;
-      border-bottom: 3px solid var(--green);
-      padding-bottom: 6px;
-      margin: 0 0 28px;
+      border-bottom: 2px solid var(--green);
+      padding-bottom: 10px;
+      margin: 0 0 36px;
     }
-
-    .contact-info .green-line { display: none; }
 
     .contact-row {
       display: flex;
       flex-direction: column;
-      gap: 18px;
+      gap: 0;
     }
 
     .contact-item {
-      border-left: 3px solid var(--green);
-      padding-left: 14px;
-      transition: border-color 0.2s;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border);
     }
 
-    .contact-item:hover { border-left-color: var(--green-bright); }
+    .contact-item:first-child { border-top: 1px solid var(--border); }
 
     .contact-item label {
       font-family: 'Oswald', sans-serif;
-      font-size: 14px;
-      letter-spacing: 2px;
+      font-size: 10px;
+      letter-spacing: 3px;
       text-transform: uppercase;
-      color: var(--green-bright);
+      color: var(--text-dim);
       display: block;
-      margin-bottom: 4px;
+      margin-bottom: 5px;
       font-weight: 500;
     }
 
     .contact-item p, .contact-item a {
-      font-size: 16px;
+      font-size: 15px;
       color: var(--text);
       margin: 0;
       text-decoration: none;
+      font-weight: 400;
       word-break: break-word;
     }
 
@@ -503,14 +538,17 @@
     .contact-cta {
       background: var(--surface);
       border: 1px solid var(--border);
-      border-top: 3px solid var(--green);
-      padding: 36px;
-      transition: border-top-color 0.2s, background 0.2s;
+      padding: 40px;
     }
 
-    .contact-cta:hover {
-      border-top-color: var(--green-bright);
-      background: #1e1e1e;
+    .contact-cta-label {
+      font-family: 'Oswald', sans-serif;
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--green-bright);
+      margin-bottom: 12px;
+      display: block;
     }
 
     .contact-cta h3 {
@@ -519,95 +557,161 @@
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 1px;
-      margin: 0 0 12px;
+      margin: 0 0 10px;
+      color: #fff;
     }
 
-    .contact-cta p { font-size: 14px; color: #aaa; line-height: 1.6; margin: 0 0 24px; }
+    .contact-cta p {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin: 0 0 28px;
+    }
 
-    .contact-cta .btn { width: 100%; justify-content: center; margin-bottom: 10px; }
+    .contact-cta-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .contact-cta-buttons .btn {
+      width: 100%;
+      justify-content: center;
+      font-size: 12px;
+      padding: 12px 20px;
+    }
 
     .pricing-note {
       font-size: 12px;
-      color: var(--muted);
-      margin-top: 16px;
-      line-height: 1.5;
+      color: var(--text-dim);
+      margin-top: 20px;
+      line-height: 1.6;
       border-top: 1px solid var(--border);
       padding-top: 16px;
     }
 
+    .pricing-note strong { color: #bbb; }
+
     /* ── FOOTER ───────────────────────────── */
     footer {
-      background: #080808;
-      border-top: 2px solid var(--green-dim);
-      padding: 24px 40px;
+      background: #070707;
+      border-top: 1px solid var(--border);
+      padding: 28px 48px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
-      gap: 10px;
+      gap: 12px;
     }
 
-    footer .footer-brand {
+    .footer-brand {
       font-family: 'Oswald', sans-serif;
-      font-size: 15px;
+      font-size: 13px;
       font-weight: 600;
-      letter-spacing: 1px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--text-muted);
     }
 
-    footer .footer-copy { font-size: 13px; color: var(--muted); }
+    .footer-copy {
+      font-size: 12px;
+      color: var(--text-dim);
+      letter-spacing: 0.5px;
+    }
 
-    footer .footer-copy a {
-      color: var(--muted);
+    .footer-copy a {
+      color: var(--text-dim);
       text-decoration: none;
       transition: color 0.2s;
     }
 
-    footer .footer-copy a:hover { color: var(--green-bright); }
+    .footer-copy a:hover { color: var(--green-bright); }
 
     /* ── MOBILE ───────────────────────────── */
-    @media (max-width: 680px) {
-      .header { padding: 0 16px; height: auto; min-height: 64px; flex-wrap: wrap; gap: 8px; padding-top: 10px; padding-bottom: 10px; }
-      .header-nav .btn-outline { display: none; }
-      .header-nav a[href="work.html"] { display: inline-flex; font-size: 13px; padding: 9px 14px; }
-      .header-nav .btn-primary { font-size: 13px; padding: 9px 16px; }
-      .brand-text .name { font-size: 17px; }
-
-      .hero { min-height: 72vh; }
-      .hero-content { padding: 0 16px; }
-      .hero-eyebrow { font-size: 14px; letter-spacing: 2px; }
-      .hero h1 { font-size: clamp(30px, 9vw, 46px); }
-      .hero-sub { font-size: 14px; }
-      .hero-buttons { flex-direction: column; align-items: center; }
-      .hero-buttons .btn { width: 100%; max-width: 280px; justify-content: center; }
-
-      .stats-bar { flex-direction: column; }
-      .stat-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); padding: 12px 20px; justify-content: center; }
-      .stat-item:last-child { border-bottom: none; }
-
-      .section { padding: 56px 16px; }
-      .section-label { font-size: 15px; }
-      .section h2 { font-size: clamp(26px, 7vw, 36px); }
-
-      .area-inner { padding: 56px 16px; }
-      .area-inner h2 { font-size: clamp(26px, 7vw, 36px); }
-
-      .services-grid { grid-template-columns: 1fr; }
-      .card-residential { grid-template-columns: 1fr; }
-      .card { padding: 28px 22px; }
-
-      .county-tags { flex-direction: column; align-items: center; }
-      .county-tag { font-size: 11px; padding: 7px 16px; letter-spacing: 1.5px; width: 100%; max-width: 280px; text-align: center; }
-
-      .contact-inner { grid-template-columns: 1fr; gap: 36px; padding: 56px 16px; }
-      .contact-cta { padding: 28px 22px; }
-      .contact-cta .btn { font-size: 14px; }
-
-      footer { flex-direction: column; text-align: center; padding: 20px 16px; }
+    /* ── TABLET ───────────────────────────── */
+    @media (max-width: 968px) {
+      .header { padding: 0 24px; }
+      .section { padding: 80px 24px; }
+      .area-inner { padding: 80px 24px; }
+      .contact-inner { gap: 48px; padding: 80px 24px; }
+      .stat-item { padding: 14px 24px; }
     }
 
-    @media (max-width: 400px) {
-      .brand-text .name { font-size: 15px; }
-      .header-logo { width: 38px; height: 38px; }
+    /* ── MOBILE ───────────────────────────── */
+    @media (max-width: 768px) {
+      .header {
+        padding: 0 18px;
+        height: 64px;
+      }
+      .header-nav { gap: 8px; }
+      .nav-link { padding: 8px 10px; font-size: 11px; }
+      .nav-divider { display: none; }
+      .btn-ghost { display: none; }
+      .brand-text .name { font-size: 16px; }
+      .brand-text .tagline { font-size: 9px; letter-spacing: 2px; }
+      .header-logo { width: 40px; height: 40px; }
+      .header-nav .btn { padding: 8px 16px; font-size: 11px; }
+
+      .hero { min-height: 78vh; }
+      .hero-content { padding: 0 24px; }
+      .hero-eyebrow { font-size: 10px; padding: 5px 14px; letter-spacing: 3px; margin-bottom: 20px; }
+      .hero h1 { font-size: clamp(34px, 11vw, 56px); letter-spacing: 1px; margin-bottom: 20px; }
+      .hero-sub { font-size: 15px; margin-bottom: 32px; }
+      .hero-buttons { flex-direction: column; align-items: stretch; gap: 10px; width: 100%; max-width: 300px; margin: 0 auto; }
+      .hero-buttons .btn { width: 100%; justify-content: center; padding: 14px 24px; }
+
+      .stats-bar { flex-direction: column; }
+      .stat-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); padding: 13px 20px; justify-content: center; }
+      .stat-item:last-child { border-bottom: none; }
+      .stat-text { font-size: 11px; letter-spacing: 1.8px; }
+
+      .section { padding: 64px 20px; }
+      .section-eyebrow { font-size: 10px; letter-spacing: 3.5px; }
+      .section-title { font-size: clamp(26px, 7vw, 34px); margin-bottom: 36px; }
+
+      .services-grid { grid-template-columns: 1fr; gap: 1px; }
+      .card { padding: 32px 24px; }
+      .card-residential { grid-template-columns: 1fr; }
+      .card-residential .card-left { border-right: none; border-bottom: 1px solid var(--border); padding: 28px 24px; }
+      .card-residential .card-right { padding: 24px; }
+      .card h3 { font-size: 18px; }
+      .card-number { font-size: 10px; }
+
+      .area-inner { padding: 64px 20px; }
+      .county-tags { gap: 6px; }
+      .county-tag {
+        flex: 1 1 calc(50% - 6px);
+        min-width: 0;
+        text-align: center;
+        font-size: 10px;
+        padding: 7px 12px;
+        letter-spacing: 1.5px;
+      }
+      .map-box iframe { height: 320px; }
+
+      .contact-inner { grid-template-columns: 1fr; gap: 56px; padding: 64px 20px; }
+      .contact-title { font-size: clamp(24px, 7vw, 32px); margin-bottom: 28px; }
+      .contact-cta { padding: 32px 24px; }
+      .contact-cta h3 { font-size: 20px; }
+
+      footer { flex-direction: column; text-align: center; padding: 28px 20px; gap: 10px; }
+      .footer-copy { font-size: 11px; line-height: 1.6; }
+    }
+
+    /* ── SMALL MOBILE ─────────────────────── */
+    @media (max-width: 420px) {
+      .header { padding: 0 14px; }
+      .brand-text .name { font-size: 14px; letter-spacing: 1px; }
+      .brand-text .tagline { font-size: 8px; }
+      .header-logo { width: 36px; height: 36px; }
+      .header-nav { gap: 6px; }
+      .nav-link { padding: 6px 8px; font-size: 10px; letter-spacing: 1px; }
+      .header-nav .btn { padding: 7px 12px; font-size: 10px; letter-spacing: 1px; }
+
+      .hero h1 { font-size: clamp(30px, 11vw, 44px); }
+      .hero-sub { font-size: 14px; }
+
+      .county-tag { flex: 1 1 100%; }
     }
   </style>
 </head>
@@ -616,28 +720,32 @@
 <!-- HEADER -->
 <header class="header">
   <a href="index.html" class="header-brand">
-    <img src="BKENTERPRISESLOGO.png" class="header-logo" alt="BK Logo">
+    <img src="BKENTERPRISESLOGO.png" class="header-logo" alt="BK Enterprises Logo">
     <div class="brand-text">
-      <div class="name">Barnette & Kiser</div>
+      <div class="name">Barnette &amp; Kiser</div>
       <div class="tagline">Steam &amp; Pressure Cleaning</div>
     </div>
   </a>
-  <div class="header-nav">
-    <a href="work.html" class="btn btn-outline">Our Work</a>
-    <a href="tel:2762854605" class="btn btn-outline">&#128222; 276-285-4605</a>
-    <a href="mailto:barnetteandkiserenterprises@gmail.com?subject=Request%20for%20Quote" class="btn btn-primary">Get a Quote</a>
-  </div>
+  <nav class="header-nav">
+    <a href="work.html" class="nav-link">Our Work</a>
+    <div class="nav-divider"></div>
+    <a href="tel:2763448520" class="btn btn-ghost">276-344-8520</a>
+    <a href="https://calendly.com/barnetteandkiserenterprises/30min" target="_blank" class="btn btn-primary">Book Now</a>
+  </nav>
 </header>
 
 <!-- HERO -->
 <section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-watermark"></div>
   <div class="hero-content">
-    <p class="hero-eyebrow">Southwest Virginia's Equipment Cleaning Specialists</p>
-    <h1>Built Tough.<br><span>Cleaned Right.</span></h1>
+    <span class="hero-eyebrow">Southwest Virginia &bull; Northeast Tennessee</span>
+    <h1>Built Tough.<br><em>Cleaned Right.</em></h1>
     <p class="hero-sub">High-pressure steam cleaning for heavy machinery, big rigs, and fleet trucks. When your equipment works hard, we clean harder.</p>
     <div class="hero-buttons">
-      <a href="mailto:barnetteandkiserenterprises@gmail.com?subject=Request%20for%20Quote" class="btn btn-primary">Request a Quote</a>
-      <a href="tel:2762854605" class="btn btn-outline">Call Now</a>
+      <a href="https://calendly.com/barnetteandkiserenterprises/30min" target="_blank" class="btn btn-primary">Book Now</a>
+      <a href="mailto:barnetteandkiserenterprises@gmail.com?subject=Request%20for%20Quote" class="btn btn-outline">Request a Quote</a>
+      <a href="tel:2763448520" class="btn btn-outline">276-344-8520</a>
     </div>
   </div>
 </section>
@@ -645,48 +753,54 @@
 <!-- STATS BAR -->
 <div class="stats-bar">
   <div class="stat-item">
-    <span class="stat-icon">&#128297;</span>
+    <div class="stat-dot"></div>
     <span class="stat-text">Heavy Equipment Specialists</span>
   </div>
   <div class="stat-item">
-    <span class="stat-icon">&#128168;</span>
+    <div class="stat-dot"></div>
     <span class="stat-text">High-Pressure Steam</span>
   </div>
   <div class="stat-item">
-    <span class="stat-icon">&#128197;</span>
+    <div class="stat-dot"></div>
     <span class="stat-text">7 Days a Week</span>
   </div>
   <div class="stat-item">
-    <span class="stat-icon">&#128205;</span>
+    <div class="stat-dot"></div>
     <span class="stat-text">Locally Owned &amp; Operated</span>
   </div>
 </div>
 
 <!-- SERVICES -->
-<div style="background: var(--bg);">
+<div class="services-bg">
   <div class="section">
-    <p class="section-label">What We Do</p>
-    <h2>Our Services</h2>
+    <p class="section-eyebrow">What We Do</p>
+    <h2 class="section-title">Our Services</h2>
 
     <div class="services-grid">
-      <div class="card featured">
-        <span class="card-icon">&#128668;</span>
+      <div class="card">
+        <div class="card-accent"></div>
+        <div class="card-number">01</div>
         <h3>Heavy Equipment</h3>
         <p>Deep-clean skidders, loaders, excavators, bulldozers, and any heavy iron. We get into every crevice grease, oil, and mud hides in.</p>
         <span class="card-detail">Skidders &bull; Loaders &bull; Excavators &bull; Dozers</span>
       </div>
 
-      <div class="card featured">
-        <span class="card-icon">&#128667;</span>
+      <div class="card">
+        <div class="card-accent"></div>
+        <div class="card-number">02</div>
         <h3>Big Rigs &amp; Trucks</h3>
         <p>Full fleet washdowns for semis, dump trucks, and work vehicles. Keep your trucks road-ready, inspection-ready, and professional-looking.</p>
         <span class="card-detail">Semi Trucks &bull; Dump Trucks &bull; Fleet Vehicles</span>
       </div>
 
       <div class="card card-residential">
-        <span class="card-icon">&#127968;</span>
-        <div>
+        <div class="card-left">
+          <div class="card-accent"></div>
+          <div class="card-number">03</div>
           <h3>Residential</h3>
+          <span class="card-detail">Driveways &bull; Sidewalks &bull; Siding &bull; Decks</span>
+        </div>
+        <div class="card-right">
           <p>Driveways, sidewalks, siding, decks, and exterior surfaces. Same professional-grade pressure washing &mdash; scaled for your home.</p>
         </div>
       </div>
@@ -697,14 +811,14 @@
 <!-- SERVICE AREA -->
 <div class="area-section">
   <div class="area-inner">
-    <p class="section-label">Where We Work</p>
-    <h2>Service Area</h2>
-    <p style="color:#aaa; margin-bottom:20px; font-size:15px;">We proudly serve Southwest Virginia and Northeast Tennessee &mdash; on-site at your job yard, job site, or home.</p>
+    <p class="section-eyebrow">Where We Work</p>
+    <h2 class="section-title">Service Area</h2>
+    <p style="color:var(--text-muted); margin-bottom:32px; font-size:15px; line-height:1.6;">We proudly serve Southwest Virginia and Northeast Tennessee &mdash; on-site at your job yard, job site, or home.</p>
 
     <div class="county-tags">
-      <span class="county-tag">Russell County</span>
-      <span class="county-tag">Wise County</span>
-      <span class="county-tag">Smyth County</span>
+      <span class="county-tag">Russell County, VA</span>
+      <span class="county-tag">Wise County, VA</span>
+      <span class="county-tag">Smyth County, VA</span>
       <span class="county-tag">Washington County, VA</span>
       <span class="county-tag">Washington County, TN</span>
     </div>
@@ -712,7 +826,8 @@
     <div class="map-box">
       <iframe
         src="https://www.google.com/maps?q=Russell+County+VA+Wise+County+VA+Washington+County+VA+Smyth+County+VA+Washington+County+TN&output=embed"
-        title="Service Area Map">
+        title="Service Area Map"
+        loading="lazy">
       </iframe>
     </div>
   </div>
@@ -724,7 +839,7 @@
 
     <div class="contact-info">
       <p class="contact-eyebrow">Reach Out</p>
-      <h2>Get In Touch</h2>
+      <h2 class="contact-title">Get In Touch</h2>
       <div class="contact-row">
         <div class="contact-item">
           <label>Owners</label>
@@ -732,7 +847,7 @@
         </div>
         <div class="contact-item">
           <label>Phone</label>
-          <a href="tel:2762854605">276-285-4605</a>
+          <a href="tel:2763448520">276-344-8520</a>
         </div>
         <div class="contact-item">
           <label>Email</label>
@@ -740,18 +855,22 @@
         </div>
         <div class="contact-item">
           <label>Hours</label>
-          <p>Monday &ndash; Sunday<br>Flexible scheduling available</p>
+          <p>Monday &ndash; Sunday &nbsp;&middot;&nbsp; Flexible Scheduling</p>
         </div>
       </div>
     </div>
 
     <div class="contact-cta">
-      <h3>Ready to Book?</h3>
-      <p>Tell us about your equipment or job and we'll get you a fast, no-hassle custom quote.</p>
-      <a href="mailto:barnetteandkiserenterprises@gmail.com?subject=Request%20for%20Quote" class="btn btn-primary">Email Us a Quote Request</a>
-      <a href="tel:2762854605" class="btn btn-outline">Call 276-285-4605</a>
+      <span class="contact-cta-label">Ready to Book?</span>
+      <h3>Get a Fast Quote</h3>
+      <p>Tell us about your equipment or job and we&rsquo;ll get you a no-hassle custom quote.</p>
+      <div class="contact-cta-buttons">
+        <a href="https://calendly.com/barnetteandkiserenterprises/30min" target="_blank" class="btn btn-primary">Book Now</a>
+        <a href="mailto:barnetteandkiserenterprises@gmail.com?subject=Request%20for%20Quote" class="btn btn-outline">Email a Quote Request</a>
+        <a href="tel:2763448520" class="btn btn-outline">Call 276-344-8520</a>
+      </div>
       <p class="pricing-note">
-        <strong style="color:#ccc;">Pricing:</strong> Starting at $75&ndash;$125/hr depending on equipment size and service type. Custom quotes available for large fleets or recurring jobs.
+        <strong>Pricing:</strong> Starting at $75&ndash;$125/hr depending on equipment size and service type. Custom quotes available for large fleets or recurring jobs.
       </p>
     </div>
 
@@ -761,7 +880,7 @@
 <!-- FOOTER -->
 <footer>
   <span class="footer-brand">Barnette &amp; Kiser Enterprises</span>
-  <span class="footer-copy">&copy; 2026 Barnette &amp; Kiser Enterprises &mdash; Reliable &bull; Hardworking &bull; Local &bull; <a href="privacy.html">Privacy Policy</a></span>
+  <span class="footer-copy">&copy; 2026 Barnette &amp; Kiser Enterprises &nbsp;&middot;&nbsp; Reliable &nbsp;&middot;&nbsp; Hardworking &nbsp;&middot;&nbsp; Local &nbsp;&middot;&nbsp; <a href="privacy.html">Privacy Policy</a></span>
 </footer>
 
 </body>
