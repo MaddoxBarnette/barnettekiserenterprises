@@ -399,15 +399,16 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 0;
+      padding: 0;
     }
 
     .card-residential .card-left {
-      padding: 36px 40px;
+      padding: 44px 40px;
       border-right: 1px solid var(--border);
     }
 
     .card-residential .card-right {
-      padding: 36px 40px;
+      padding: 44px 40px;
       display: flex;
       align-items: center;
     }
@@ -671,9 +672,9 @@
       .card h3 { font-size: 22px; margin-bottom: 14px; }
       .card p { font-size: 15px; }
       .card-detail { font-size: 12px; }
-      .card-residential { grid-template-columns: 1fr; }
-      .card-residential .card-left { border-right: none; border-bottom: 1px solid var(--border); padding: 32px 28px; }
-      .card-residential .card-right { padding: 28px; }
+      .card-residential { grid-template-columns: 1fr; padding: 0; }
+      .card-residential .card-left { border-right: none; border-bottom: none; padding: 36px 28px 0; }
+      .card-residential .card-right { padding: 16px 28px 36px; }
       .card-residential .card-right p { font-size: 15px; }
 
       .area-inner { padding: 72px 22px; }
@@ -828,8 +829,8 @@
 
     <div class="map-box">
       <iframe
-        src="https://www.google.com/maps?q=Russell+County+VA+Wise+County+VA+Washington+County+VA+Smyth+County+VA+Washington+County+TN&output=embed"
-        title="Service Area Map"
+        src="https://www.google.com/maps?q=Russell+County,+VA+to+Washington+County,+TN&output=embed&z=8"
+        title="Service Area Map - Russell, Wise, Smyth, Washington VA, Washington TN"
         loading="lazy">
       </iframe>
     </div>
