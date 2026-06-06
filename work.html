@@ -338,6 +338,10 @@
       background: var(--border);
     }
 
+    .ba-images:has(> .ba-slot:only-child) {
+      grid-template-columns: 1fr;
+    }
+
     .ba-slot {
       position: relative;
       aspect-ratio: 4/3;
@@ -644,11 +648,6 @@
   </div>
 </div>
 
-<!-- COMING SOON BANNER -->
-<div class="coming-soon-banner">
-  Photos being added as jobs are completed &nbsp;&middot;&nbsp; Check back soon
-</div>
-
 <!-- FILTER TABS -->
 <div class="filter-bar">
   <button class="filter-btn active">All</button>
@@ -661,6 +660,41 @@
 <div class="gallery-section">
   <div class="gallery-grid fade-in">
 
+    <!-- TRUCK EXTERIOR -->
+    <div class="ba-card">
+      <div class="ba-images">
+        <div class="ba-slot">
+          <span class="ba-label label-after">After</span>
+          <img src="truck1-exterior-after.jpg" alt="Fleet truck exterior after pressure wash">
+        </div>
+      </div>
+      <div class="ba-info">
+        <h3>Fleet Truck Exterior</h3>
+        <p>Full exterior pressure wash on 4 commercial trucks &mdash; road grime, mud, and buildup removed down to bare metal.</p>
+        <span class="ba-tag">Big Rigs &amp; Trucks</span>
+      </div>
+    </div>
+
+    <!-- TRUCK INTERIOR -->
+    <div class="ba-card">
+      <div class="ba-images">
+        <div class="ba-slot">
+          <span class="ba-label label-before">Before</span>
+          <img src="truck1-interior-before.jpg" alt="Fleet truck interior before detail">
+        </div>
+        <div class="ba-slot">
+          <span class="ba-label label-after">After</span>
+          <img src="truck1-interior-after.jpg" alt="Fleet truck interior after detail">
+        </div>
+      </div>
+      <div class="ba-info">
+        <h3>Fleet Truck Interior</h3>
+        <p>Full interior detail on 4 commercial trucks &mdash; cabs cleaned and restored to professional condition.</p>
+        <span class="ba-tag">Big Rigs &amp; Trucks</span>
+      </div>
+    </div>
+
+    <!-- PLACEHOLDERS -->
     <div class="ba-card">
       <div class="ba-images">
         <div class="ba-slot placeholder">
@@ -673,7 +707,7 @@
         </div>
       </div>
       <div class="ba-info">
-        <h3>Skidder Clean</h3>
+        <h3>Heavy Equipment Clean</h3>
         <p>Full steam clean &mdash; undercarriage, cab, and boom. Grease, mud, and hydraulic buildup removed.</p>
         <span class="ba-tag">Heavy Equipment</span>
       </div>
@@ -691,26 +725,8 @@
         </div>
       </div>
       <div class="ba-info">
-        <h3>Semi Truck Washdown</h3>
-        <p>Road grime, mud flaps, and undercarriage &mdash; full exterior fleet wash.</p>
-        <span class="ba-tag">Big Rigs &amp; Trucks</span>
-      </div>
-    </div>
-
-    <div class="ba-card">
-      <div class="ba-images">
-        <div class="ba-slot placeholder">
-          <span class="ba-label label-before">Before</span>
-          <span class="placeholder-text">Photo Coming Soon</span>
-        </div>
-        <div class="ba-slot placeholder">
-          <span class="ba-label label-after">After</span>
-          <span class="placeholder-text">Photo Coming Soon</span>
-        </div>
-      </div>
-      <div class="ba-info">
-        <h3>Driveway &amp; Sidewalk</h3>
-        <p>High-pressure wash on concrete &mdash; years of staining lifted clean.</p>
+        <h3>Residential Wash</h3>
+        <p>High-pressure wash on driveways, sidewalks, and exterior surfaces &mdash; years of staining lifted clean.</p>
         <span class="ba-tag">Residential</span>
       </div>
     </div>
@@ -721,7 +737,7 @@
     </div>
 
     <div class="placeholder-card">
-      <span class="placeholder-card-label">Big Rigs &amp; Trucks</span>
+      <span class="placeholder-card-label">Residential</span>
       <p class="placeholder-card-text">More jobs coming soon</p>
     </div>
 
