@@ -354,17 +354,17 @@
       overflow: hidden;
     }
 
+    .ba-images:has(> .ba-slot:only-child) {
+      grid-template-columns: 1fr;
+    }
+
     .ba-images:has(> .ba-slot:only-child) .ba-slot {
-      aspect-ratio: 16/9;
+      aspect-ratio: 3/2;
     }
 
     @media (max-width: 768px) {
-      .ba-slot {
-        aspect-ratio: 3/2;
-      }
-      .ba-images:has(> .ba-slot:only-child) .ba-slot {
-        aspect-ratio: 16/9;
-      }
+      .ba-slot { aspect-ratio: 3/2; }
+      .ba-images:has(> .ba-slot:only-child) .ba-slot { aspect-ratio: 3/2; }
     }
 
     .ba-slot img { width: 100%; height: 100%; object-fit: cover; display: block; }
@@ -663,10 +663,10 @@
 
 <!-- FILTER TABS -->
 <div class="filter-bar">
-  <button class="filter-btn active">All</button>
-  <button class="filter-btn">Heavy Equipment</button>
-  <button class="filter-btn">Big Rigs &amp; Trucks</button>
-  <button class="filter-btn">Residential</button>
+  <button class="filter-btn active" data-filter="all">All</button>
+  <button class="filter-btn" data-filter="heavy-equipment">Heavy Equipment</button>
+  <button class="filter-btn" data-filter="big-rigs">Big Rigs &amp; Trucks</button>
+  <button class="filter-btn" data-filter="residential">Residential</button>
 </div>
 
 <!-- GALLERY -->
@@ -674,7 +674,7 @@
   <div class="gallery-grid fade-in">
 
     <!-- TRUCK EXTERIOR -->
-    <div class="ba-card">
+    <div class="ba-card" data-category="big-rigs">
       <div class="ba-images">
         <div class="ba-slot">
           <span class="ba-label label-after">After</span>
@@ -689,7 +689,7 @@
     </div>
 
     <!-- TRUCK INTERIOR -->
-    <div class="ba-card">
+    <div class="ba-card" data-category="big-rigs">
       <div class="ba-images">
         <div class="ba-slot">
           <span class="ba-label label-before">Before</span>
@@ -708,7 +708,7 @@
     </div>
 
     <!-- PLACEHOLDERS -->
-    <div class="ba-card">
+    <div class="ba-card" data-category="heavy-equipment">
       <div class="ba-images">
         <div class="ba-slot placeholder">
           <span class="ba-label label-before">Before</span>
@@ -726,7 +726,7 @@
       </div>
     </div>
 
-    <div class="ba-card">
+    <div class="ba-card" data-category="residential">
       <div class="ba-images">
         <div class="ba-slot placeholder">
           <span class="ba-label label-before">Before</span>
@@ -744,17 +744,17 @@
       </div>
     </div>
 
-    <div class="placeholder-card">
+    <div class="placeholder-card" data-category="heavy-equipment">
       <span class="placeholder-card-label">Heavy Equipment</span>
       <p class="placeholder-card-text">More jobs coming soon</p>
     </div>
 
-    <div class="placeholder-card">
+    <div class="placeholder-card" data-category="residential">
       <span class="placeholder-card-label">Residential</span>
       <p class="placeholder-card-text">More jobs coming soon</p>
     </div>
 
-    <div class="placeholder-card">
+    <div class="placeholder-card" data-category="residential">
       <span class="placeholder-card-label">Residential</span>
       <p class="placeholder-card-text">More jobs coming soon</p>
     </div>
@@ -780,15 +780,38 @@
 </footer>
 
 <script>
+  // Filter functionality
   const filterBtns = document.querySelectorAll('.filter-btn');
+  const cards = document.querySelectorAll('[data-category]');
+
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
+      const filter = btn.getAttribute('data-filter');
+
+      // Update active button
       filterBtns.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
+
+      // Show/hide cards
+      cards.forEach(card => {
+        if (filter === 'all' || card.getAttribute('data-category') === filter) {
+          card.style.display = '';
+          setTimeout(() => { card.style.opacity = '1'; card.style.transform = 'translateY(0)'; }, 10);
+        } else {
+          card.style.opacity = '0';
+          card.style.transform = 'translateY(10px)';
+          setTimeout(() => { card.style.display = 'none'; }, 300);
+        }
+      });
     });
   });
 
-  // Smooth fade-in on scroll
+  // Add transition to all cards
+  cards.forEach(card => {
+    card.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+  });
+
+  // Scroll fade-in
   const fadeElements = document.querySelectorAll('.fade-in');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
