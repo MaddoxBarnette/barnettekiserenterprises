@@ -354,6 +354,10 @@
       overflow: hidden;
     }
 
+    .ba-images:has(> .ba-slot:only-child) .ba-slot {
+      aspect-ratio: 8/3;
+    }
+
     .ba-slot img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
     .ba-slot.placeholder {
